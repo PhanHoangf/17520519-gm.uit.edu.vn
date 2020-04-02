@@ -1,0 +1,12 @@
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fLogin.resources
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fGrade.resources
+D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fInfo.resources
