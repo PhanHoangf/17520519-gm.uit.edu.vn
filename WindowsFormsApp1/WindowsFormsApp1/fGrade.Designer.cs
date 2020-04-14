@@ -37,9 +37,9 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.flpKhoi12 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnXem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.tbnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXem = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,7 +67,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.Location = new System.Drawing.Point(13, 93);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(240, 209);
+            this.groupBox1.Size = new System.Drawing.Size(240, 521);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Khối 10";
@@ -77,13 +77,13 @@
             this.flpKhoi10.AutoScroll = true;
             this.flpKhoi10.Location = new System.Drawing.Point(7, 30);
             this.flpKhoi10.Name = "flpKhoi10";
-            this.flpKhoi10.Size = new System.Drawing.Size(227, 173);
+            this.flpKhoi10.Size = new System.Drawing.Size(227, 485);
             this.flpKhoi10.TabIndex = 0;
             // 
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThoat.Location = new System.Drawing.Point(540, 0);
+            this.btnThoat.Location = new System.Drawing.Point(577, 0);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(173, 72);
             this.btnThoat.TabIndex = 2;
@@ -97,7 +97,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.Location = new System.Drawing.Point(279, 93);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(240, 209);
+            this.groupBox2.Size = new System.Drawing.Size(240, 521);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Khối 11";
@@ -107,7 +107,7 @@
             this.flpKhoi11.AutoScroll = true;
             this.flpKhoi11.Location = new System.Drawing.Point(6, 30);
             this.flpKhoi11.Name = "flpKhoi11";
-            this.flpKhoi11.Size = new System.Drawing.Size(227, 173);
+            this.flpKhoi11.Size = new System.Drawing.Size(227, 485);
             this.flpKhoi11.TabIndex = 1;
             // 
             // groupBox3
@@ -116,7 +116,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox3.Location = new System.Drawing.Point(539, 93);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(240, 209);
+            this.groupBox3.Size = new System.Drawing.Size(240, 521);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Khối 12";
@@ -126,7 +126,7 @@
             this.flpKhoi12.AutoScroll = true;
             this.flpKhoi12.Location = new System.Drawing.Point(7, 30);
             this.flpKhoi12.Name = "flpKhoi12";
-            this.flpKhoi12.Size = new System.Drawing.Size(227, 173);
+            this.flpKhoi12.Size = new System.Drawing.Size(227, 485);
             this.flpKhoi12.TabIndex = 1;
             // 
             // panel1
@@ -135,10 +135,30 @@
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnXem);
-            this.panel1.Location = new System.Drawing.Point(20, 344);
+            this.panel1.Location = new System.Drawing.Point(20, 620);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(722, 72);
+            this.panel1.Size = new System.Drawing.Size(753, 72);
             this.panel1.TabIndex = 5;
+            // 
+            // tbnXoa
+            // 
+            this.tbnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tbnXoa.Location = new System.Drawing.Point(388, 0);
+            this.tbnXoa.Name = "tbnXoa";
+            this.tbnXoa.Size = new System.Drawing.Size(173, 72);
+            this.tbnXoa.TabIndex = 5;
+            this.tbnXoa.Text = "Xóa";
+            this.tbnXoa.UseVisualStyleBackColor = true;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSua.Location = new System.Drawing.Point(197, 0);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(173, 72);
+            this.btnSua.TabIndex = 4;
+            this.btnSua.Text = "Thêm";
+            this.btnSua.UseVisualStyleBackColor = true;
             // 
             // btnXem
             // 
@@ -151,39 +171,20 @@
             this.btnXem.UseVisualStyleBackColor = true;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSua.Location = new System.Drawing.Point(182, 0);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(173, 72);
-            this.btnSua.TabIndex = 4;
-            this.btnSua.Text = "Thêm";
-            this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // tbnXoa
-            // 
-            this.tbnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tbnXoa.Location = new System.Drawing.Point(361, 0);
-            this.tbnXoa.Name = "tbnXoa";
-            this.tbnXoa.Size = new System.Drawing.Size(173, 72);
-            this.tbnXoa.TabIndex = 5;
-            this.tbnXoa.Text = "Xóa";
-            this.tbnXoa.UseVisualStyleBackColor = true;
-            // 
             // fGrade
             // 
             this.AcceptButton = this.btnXem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(791, 428);
+            this.ClientSize = new System.Drawing.Size(791, 704);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblDsKhoiLop);
             this.Name = "fGrade";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grade";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

@@ -10,3 +10,16 @@ D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pd
 D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fLogin.resources
 D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fGrade.resources
 D:\QL_HS-Project\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fInfo.resources
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fLogin.resources
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fGrade.resources
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fInfo.resources
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Inserths.resources

@@ -11,7 +11,7 @@ namespace WindowsFormsApp1.DAO
     public class ClassDAO
     {
         private static ClassDAO instance;
-        public static int btnWidth = 120;
+        public static int btnWidth = 145;
         public static int btnHeight = 50;
         public static ClassDAO Instance
         {
@@ -34,7 +34,6 @@ namespace WindowsFormsApp1.DAO
             {
                 Classes classes = new Classes(item);
                 classesList.Add(classes);
-
             }
             return classesList;
         }

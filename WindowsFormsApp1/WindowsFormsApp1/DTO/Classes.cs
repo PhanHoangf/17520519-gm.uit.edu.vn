@@ -9,15 +9,19 @@ namespace WindowsFormsApp1.DTO
 {
     public class Classes
     {
+        private int iD;
         private string tenLop;
-        public Classes(string name)
+        public Classes(string name,int id)
         {
+            this.ID = id;
             this.TenLop = name;
+            
         }
        
         public Classes(DataRow row)
         {
-            this.TenLop = row["TenLop"].ToString();
+          this.ID = (int)row["iDlop"];
+          this.TenLop = row["Tenlop"].ToString();
         }
 
         public string TenLop {
@@ -27,6 +31,7 @@ namespace WindowsFormsApp1.DTO
                 tenLop = value;
             }
         }
-       
+
+        public int ID { get => iD; set => iD = value; }
     }
 }

@@ -43,5 +43,10 @@ namespace WindowsFormsApp1
 
             return Account.Instance.Login(userName, passWord);
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
