@@ -13,8 +13,8 @@ namespace WindowsFormsApp1
 {
     public partial class Inserths : Form
     {
+        //Lấy ID lớp
         private int IDlop;
-
         public int IDlop1 { get => IDlop; set => IDlop = value; }
 
         public Inserths()
@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         {
              this.Close();
         }
-
+        //Thêm học sinh
         private void btnluu_Click(object sender, EventArgs e)
         {
             if (IDlop1 == 1 || IDlop1==2 || IDlop1==3||IDlop1==4)
@@ -52,7 +52,7 @@ namespace WindowsFormsApp1
             fInfo info = new fInfo();
             info.LoadDanhSachHs();
         }
-
+        
         private void Inserths_Load(object sender, EventArgs e)
         {
             txbidlop.Text = IDlop1.ToString();

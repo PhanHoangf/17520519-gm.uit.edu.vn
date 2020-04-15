@@ -68,6 +68,7 @@ namespace WindowsFormsApp1
             {
                 Button btn = new Button() { Width = ClassDAO.btnWidth, Height = ClassDAO.btnHeight };
                 btn.Text = item.TenLop;
+                btn.Tag = item;
                 btn.Click += Btn_Click2;
                 flpKhoi12.Controls.Add(btn);
             }

@@ -30,13 +30,17 @@ namespace WindowsFormsApp1
 
         public string ClassName1 { get => ClassName; set => ClassName = value; }
         #endregion
+
+        BindingSource StudentList = new BindingSource();
         public fInfo()
         {
 
             InitializeComponent();
-            
-            
+          
+
         }
+
+
         #region Method
         //Lấy danh sách môn học
         public void Loadmonhoc()
@@ -66,9 +70,20 @@ namespace WindowsFormsApp1
         public void LoadDanhSachHs()
         {
             
-            string query = "select dshs.Hoten, l.Tenlop, dshs.Ngaysinh  from DSHocSinh as dshs, Lop as l where dshs.iDlop = l.iDlop and l.iDlop =" + ID1 + "";
-            dtgvDanhSachHs.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            string query = "select dshs.iDhocsinh, dshs.Hoten, l.Tenlop, dshs.Ngaysinh,dshs.Gioitinh,dshs.Diachi,dshs.Email,dshs.TBHKI,dshs.TBHKII  from DSHocSinh as dshs, Lop as l where dshs.iDlop = l.iDlop and l.iDlop =" + ID1 + "";
+            StudentList.DataSource = DataProvider.Instance.ExecuteQuery(query);
 
+        }
+        public void AddHsBinding()
+        {
+            txbid.DataBindings.Add("Text", dtgvDanhSachHs.DataSource, "iDhocsinh");
+            txbhoten.DataBindings.Add("Text", dtgvDanhSachHs.DataSource, "Hoten");
+            txbgioitinh.DataBindings.Add("Text", dtgvDanhSachHs.DataSource, "Gioitinh");
+            dateTimePicker1.DataBindings.Add("Value", dtgvDanhSachHs.DataSource, "Ngaysinh");
+            txbdiachi.DataBindings.Add("Text", dtgvDanhSachHs.DataSource, "Diachi");
+            txbemail.DataBindings.Add("Text", dtgvDanhSachHs.DataSource, "Email");
+            txbTBHK1.DataBindings.Add("Text", dtgvDanhSachHs.DataSource, "TBHKI");
+            txbTBHK2.DataBindings.Add("Text", dtgvDanhSachHs.DataSource, "TBHKII");
         }
         #endregion
 
@@ -80,9 +95,12 @@ namespace WindowsFormsApp1
         }
         private void fInfo_Load(object sender, EventArgs e)
         {
+            dtgvDanhSachHs.DataSource = StudentList;
             LoadDanhSachHs();
             txtTenLop.Text = ClassName1;
             Loadmonhoc();
+            AddHsBinding();
+            
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -103,8 +121,26 @@ namespace WindowsFormsApp1
             hs.IDlop1 = ID1;
             hs.Show();
         }
+
         #endregion
 
+        private void btnxem_Click(object sender, EventArgs e)
+        {
+            LoadDanhSachHs();
+        }
 
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            int idhocsinh = Convert.ToInt32(txbid.Text);
+            if(StudentDAO.Instance.DeleteHocsinh(idhocsinh))
+            {
+                MessageBox.Show("Xóa thành công!");
+                LoadDanhSachHs();
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi khi xóa");
+            }
+        }
     }
 }
