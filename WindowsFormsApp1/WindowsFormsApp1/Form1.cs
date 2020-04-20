@@ -108,8 +108,11 @@ namespace WindowsFormsApp1
         }
         public void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            int SubjectID = ((sender as CheckBox).Tag as Subjects).ID;
-            loadBangdiem(SubjectID);
+            
+            
+                int SubjectID = ((sender as CheckBox).Tag as Subjects).ID;
+                loadBangdiem(SubjectID);
+            
         }
         private void CheckBox_CheckStateChanged(object sender, EventArgs e)
         {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.DAO;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp1
 {
@@ -22,18 +23,32 @@ namespace WindowsFormsApp1
             InitializeComponent();
 
         }
+        public static bool IsValidEmail(string email)
+        {
+            Regex rx = new Regex(
+            @"^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$");
+            return rx.IsMatch(email);
+        }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
              this.Close();
         }
+        public bool valid(string hoten,string diachi,string email,string gioitinh)
+        {
+            if (hoten != "" && diachi != "" && email != "" && gioitinh != "")
+                return true;
+            else
+                return false;
+        }
+       
         //Thêm học sinh
         private void btnluu_Click(object sender, EventArgs e)
         {
-            if (IDlop1 == 1 || IDlop1==2 || IDlop1==3||IDlop1==4)
+            if (IDlop1 == 1 || IDlop1 == 2 || IDlop1 == 3 || IDlop1 == 4)
             {
-                dateTimePicker1.MaxDate = new DateTime(2000,12,31);
-                dateTimePicker1.MinDate = new DateTime(2004, 1, 1);
+                dateTimePicker1.MaxDate = new DateTime(2004, 12, 31);
+                dateTimePicker1.MinDate = new DateTime(2000, 1, 1);
             }
             string hoten = txbhoten.Text;
             string gioitinh = txbgioitinh.Text.ToString();
@@ -41,16 +56,47 @@ namespace WindowsFormsApp1
             string diachi = txbdiachi.Text;
             string email = txbemail.Text;
 
-            if(StudentDAO.Instance.InsertHocsinh(IDlop1 , hoten, gioitinh, ngaysinh, diachi, email))
+            if (txbhoten.Text == "")
             {
-                MessageBox.Show("Thêm thành công");
+                MessageBox.Show("Vui lòng nhập họ tên");
+                txbhoten.Focus();
+            }
+            if (txbgioitinh.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập giới tính");
+                txbgioitinh.Focus();
+            }
+            if (txbemail.Text == "")
+            {
+                txbemail.Focus();
+            }
+            if(txbemail.Text!="")
+            {
+
+                if (IsValidEmail(txbemail.Text) == false)
+                {
+                    MessageBox.Show("Vui lòng nhập email có định dạng abc@gmail.com");
+                    txbemail.Text = "";
+                    txbemail.Focus();
+
+                }
+               
+            }
+            if (valid(txbhoten.Text,txbdiachi.Text,txbemail.Text,txbgioitinh.Text) == true)
+            {
+                if (StudentDAO.Instance.InsertHocsinh(IDlop1, hoten, gioitinh, ngaysinh, diachi, email))
+                {
+                    MessageBox.Show("Thêm thành công");
+                }
+                else
+                {
+                    MessageBox.Show("có lỗi");
+                }
             }
             else
             {
-                MessageBox.Show("có lỗi");
+                MessageBox.Show("Vui lòng nhập lại!");
             }
-            fInfo info = new fInfo();
-            info.LoadDanhSachHs();
         }
         
         private void Inserths_Load(object sender, EventArgs e)
