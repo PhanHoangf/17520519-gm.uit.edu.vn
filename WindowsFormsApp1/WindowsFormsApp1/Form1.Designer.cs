@@ -68,7 +68,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.flpmonhoc = new System.Windows.Forms.FlowLayoutPanel();
             this.lblMon = new System.Windows.Forms.Label();
-            this.btnXembaocao = new System.Windows.Forms.Button();
+            this.btnnhapdiem = new System.Windows.Forms.Button();
             this.txtSisodiem = new System.Windows.Forms.TextBox();
             this.txtTenlopdiem = new System.Windows.Forms.TextBox();
             this.lblHocki = new System.Windows.Forms.Label();
@@ -198,7 +198,6 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(123, 131);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -225,7 +224,6 @@
             // 
             // txbemail
             // 
-            this.txbemail.Enabled = false;
             this.txbemail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbemail.Location = new System.Drawing.Point(123, 220);
             this.txbemail.Name = "txbemail";
@@ -234,7 +232,6 @@
             // 
             // txbdiachi
             // 
-            this.txbdiachi.Enabled = false;
             this.txbdiachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbdiachi.Location = new System.Drawing.Point(123, 174);
             this.txbdiachi.Name = "txbdiachi";
@@ -243,7 +240,6 @@
             // 
             // txbgioitinh
             // 
-            this.txbgioitinh.Enabled = false;
             this.txbgioitinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbgioitinh.Location = new System.Drawing.Point(123, 85);
             this.txbgioitinh.Name = "txbgioitinh";
@@ -252,7 +248,6 @@
             // 
             // txbhoten
             // 
-            this.txbhoten.Enabled = false;
             this.txbhoten.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbhoten.Location = new System.Drawing.Point(123, 42);
             this.txbhoten.Name = "txbhoten";
@@ -433,6 +428,7 @@
             this.btnCapNhat.TabIndex = 3;
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnXoa
             // 
@@ -517,21 +513,21 @@
             // 
             this.panel8.Controls.Add(this.flpmonhoc);
             this.panel8.Controls.Add(this.lblMon);
-            this.panel8.Controls.Add(this.btnXembaocao);
+            this.panel8.Controls.Add(this.btnnhapdiem);
             this.panel8.Controls.Add(this.txtSisodiem);
             this.panel8.Controls.Add(this.txtTenlopdiem);
             this.panel8.Controls.Add(this.lblHocki);
             this.panel8.Controls.Add(this.lblLopdiem);
             this.panel8.Location = new System.Drawing.Point(707, 6);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(200, 522);
+            this.panel8.Size = new System.Drawing.Size(295, 539);
             this.panel8.TabIndex = 1;
             // 
             // flpmonhoc
             // 
             this.flpmonhoc.Location = new System.Drawing.Point(3, 131);
             this.flpmonhoc.Name = "flpmonhoc";
-            this.flpmonhoc.Size = new System.Drawing.Size(194, 323);
+            this.flpmonhoc.Size = new System.Drawing.Size(289, 323);
             this.flpmonhoc.TabIndex = 7;
             // 
             // lblMon
@@ -543,16 +539,16 @@
             this.lblMon.TabIndex = 6;
             this.lblMon.Text = "Môn:";
             // 
-            // btnXembaocao
+            // btnnhapdiem
             // 
-            this.btnXembaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXembaocao.Location = new System.Drawing.Point(3, 460);
-            this.btnXembaocao.Name = "btnXembaocao";
-            this.btnXembaocao.Size = new System.Drawing.Size(194, 59);
-            this.btnXembaocao.TabIndex = 5;
-            this.btnXembaocao.Text = "Xem báo cáo";
-            this.btnXembaocao.UseVisualStyleBackColor = true;
-            this.btnXembaocao.Click += new System.EventHandler(this.button1_Click);
+            this.btnnhapdiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnnhapdiem.Location = new System.Drawing.Point(3, 460);
+            this.btnnhapdiem.Name = "btnnhapdiem";
+            this.btnnhapdiem.Size = new System.Drawing.Size(289, 75);
+            this.btnnhapdiem.TabIndex = 5;
+            this.btnnhapdiem.Text = "Nhập điểm";
+            this.btnnhapdiem.UseVisualStyleBackColor = true;
+            this.btnnhapdiem.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtSisodiem
             // 
@@ -615,7 +611,7 @@
             this.panel6.Controls.Add(this.dtvBangdiem);
             this.panel6.Location = new System.Drawing.Point(3, 65);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(698, 466);
+            this.panel6.Size = new System.Drawing.Size(698, 480);
             this.panel6.TabIndex = 0;
             // 
             // dtvBangdiem
@@ -624,7 +620,7 @@
             this.dtvBangdiem.Location = new System.Drawing.Point(3, 3);
             this.dtvBangdiem.Name = "dtvBangdiem";
             this.dtvBangdiem.RowTemplate.Height = 28;
-            this.dtvBangdiem.Size = new System.Drawing.Size(695, 460);
+            this.dtvBangdiem.Size = new System.Drawing.Size(695, 473);
             this.dtvBangdiem.TabIndex = 0;
             // 
             // tabTongketmon
@@ -645,7 +641,7 @@
             this.panel11.Controls.Add(this.dataGridView2);
             this.panel11.Location = new System.Drawing.Point(6, 62);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(695, 469);
+            this.panel11.Size = new System.Drawing.Size(695, 486);
             this.panel11.TabIndex = 2;
             // 
             // dataGridView2
@@ -654,7 +650,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(3, 3);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(689, 463);
+            this.dataGridView2.Size = new System.Drawing.Size(689, 476);
             this.dataGridView2.TabIndex = 0;
             // 
             // panel10
@@ -687,15 +683,15 @@
             this.panel9.Controls.Add(this.label1);
             this.panel9.Location = new System.Drawing.Point(707, 6);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(200, 528);
+            this.panel9.Size = new System.Drawing.Size(295, 542);
             this.panel9.TabIndex = 0;
             // 
             // btnThoat3
             // 
             this.btnThoat3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThoat3.Location = new System.Drawing.Point(6, 319);
+            this.btnThoat3.Location = new System.Drawing.Point(3, 446);
             this.btnThoat3.Name = "btnThoat3";
-            this.btnThoat3.Size = new System.Drawing.Size(194, 206);
+            this.btnThoat3.Size = new System.Drawing.Size(289, 93);
             this.btnThoat3.TabIndex = 11;
             this.btnThoat3.Text = "Thoát";
             this.btnThoat3.UseVisualStyleBackColor = true;
@@ -773,7 +769,7 @@
             this.panel14.Controls.Add(this.dataGridView3);
             this.panel14.Location = new System.Drawing.Point(6, 64);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(695, 467);
+            this.panel14.Size = new System.Drawing.Size(695, 481);
             this.panel14.TabIndex = 2;
             // 
             // dataGridView3
@@ -782,7 +778,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 28;
-            this.dataGridView3.Size = new System.Drawing.Size(689, 461);
+            this.dataGridView3.Size = new System.Drawing.Size(689, 474);
             this.dataGridView3.TabIndex = 0;
             // 
             // panel13
@@ -815,7 +811,7 @@
             this.panel12.Controls.Add(this.label5);
             this.panel12.Location = new System.Drawing.Point(707, 6);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(200, 528);
+            this.panel12.Size = new System.Drawing.Size(293, 539);
             this.panel12.TabIndex = 0;
             // 
             // textBox3
@@ -841,7 +837,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(3, 319);
+            this.button1.Location = new System.Drawing.Point(3, 333);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(194, 206);
             this.button1.TabIndex = 12;
@@ -963,7 +959,7 @@
         private System.Windows.Forms.TextBox txtSisodiem;
         private System.Windows.Forms.TextBox txtTenlopdiem;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Button btnXembaocao;
+        private System.Windows.Forms.Button btnnhapdiem;
         private System.Windows.Forms.Label lblMon;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.DataGridView dataGridView2;

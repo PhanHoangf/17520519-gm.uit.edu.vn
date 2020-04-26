@@ -98,6 +98,7 @@ namespace WindowsFormsApp1
             dtgvDanhSachHs.DataSource = StudentList;
             LoadDanhSachHs();
             txtTenLop.Text = ClassName1;
+            txtTenlopdiem.Text = ClassName1;
             Loadmonhoc();
             AddHsBinding();
             
@@ -144,6 +145,26 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Có lỗi khi xóa");
             }
+        }
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txbid.Text);
+            string hoten = txbhoten.Text;
+            string gioitinh = txbgioitinh.Text.ToString();
+            DateTime ngaysinh = dateTimePicker1.Value;
+            string diachi = txbdiachi.Text;
+            string email = txbemail.Text;
+
+            if (StudentDAO.Instance.UpdateHocsinh(id, hoten, gioitinh, ngaysinh, diachi, email))
+            {
+                MessageBox.Show("Sửa thành công");
+            }
+            else
+            {
+                MessageBox.Show("có lỗi");
+            }
+            LoadDanhSachHs();
         }
     }
 }

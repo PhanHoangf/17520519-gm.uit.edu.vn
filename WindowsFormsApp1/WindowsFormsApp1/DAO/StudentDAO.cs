@@ -41,5 +41,11 @@ namespace WindowsFormsApp1.DAO
             int result= DataProvider.Instance.ExecuteNonQuery("delete DSHocSinh where iDhocsinh = " + idhocsinh);
             return result > 0;
         }
+        public bool UpdateHocsinh(int iDhocsinh, string hoten, string gioitinh, DateTime ngaysinh, string diachi, string email)
+        {
+            string query = "UPDATE DSHocSinh SET Hoten = @Hoten , Gioitinh = @Gioitinh , Ngaysinh = @Ngaysinh , Diachi = @Diachi , Email = @Email where iDhocsinh= @iDhocsinh ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { hoten, gioitinh, ngaysinh, diachi, email, iDhocsinh });
+            return result > 0;
+        }
     }
 }

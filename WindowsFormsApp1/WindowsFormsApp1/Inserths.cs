@@ -56,20 +56,6 @@ namespace WindowsFormsApp1
             string diachi = txbdiachi.Text;
             string email = txbemail.Text;
 
-            if (txbhoten.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập họ tên");
-                txbhoten.Focus();
-            }
-            if (txbgioitinh.Text == "")
-            {
-                MessageBox.Show("Vui lòng nhập giới tính");
-                txbgioitinh.Focus();
-            }
-            if (txbemail.Text == "")
-            {
-                txbemail.Focus();
-            }
             if(txbemail.Text!="")
             {
 
@@ -95,7 +81,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập lại!");
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
             }
         }
         
