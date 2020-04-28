@@ -47,7 +47,9 @@ namespace WindowsFormsApp1
         {
             string query = "select *from MonHoc";
             List<Subjects> subjectslist = SubjectDAO.Instance.loadSubjects(query);
+          
             foreach (Subjects item in subjectslist)
+  
             {
                 CheckBox checkBox = new CheckBox() { Width = SubjectDAO.cbxwidth, Height = SubjectDAO.cbxheight };
                 checkBox.Text = item.TenMon;
@@ -55,14 +57,18 @@ namespace WindowsFormsApp1
                 checkBox.Tag = item;
                 checkBox.CheckStateChanged += CheckBox_CheckStateChanged;
                 flpmonhoc.Controls.Add(checkBox);
-
-            }
+                
+            }      
         }
+
+      
+   
+   
         //Hiển thị bảng điểm
         public void loadBangdiem(int idmonhoc)
         {
 
-            string query = "select hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,bd.Diemtbm from BangDiemMon as bd, DSHocSinh as hs where bd.idlop=" + ID1 + " and bd.iDhocsinh=hs.iDhocsinh and bd.idmonhoc=" + idmonhoc + "";
+            string query = "select hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6"+" Diemtbm "+" from BangDiemMon as bd, DSHocSinh as hs where bd.idlop=" + ID1 + " and bd.iDhocsinh=hs.iDhocsinh and bd.idmonhoc=" + idmonhoc + "";
             dtvBangdiem.DataSource = DataProvider.Instance.ExecuteQuery(query);
 
         }
@@ -113,7 +119,9 @@ namespace WindowsFormsApp1
             
                 int SubjectID = ((sender as CheckBox).Tag as Subjects).ID;
                 loadBangdiem(SubjectID);
-            
+                if(CheckState.Unchecked==0)
+                dtvBangdiem.Controls.Clear();
+
         }
         private void CheckBox_CheckStateChanged(object sender, EventArgs e)
         {

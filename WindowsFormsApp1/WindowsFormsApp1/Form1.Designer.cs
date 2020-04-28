@@ -511,8 +511,6 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.flpmonhoc);
-            this.panel8.Controls.Add(this.lblMon);
             this.panel8.Controls.Add(this.btnnhapdiem);
             this.panel8.Controls.Add(this.txtSisodiem);
             this.panel8.Controls.Add(this.txtTenlopdiem);
@@ -525,15 +523,15 @@
             // 
             // flpmonhoc
             // 
-            this.flpmonhoc.Location = new System.Drawing.Point(3, 131);
+            this.flpmonhoc.Location = new System.Drawing.Point(65, 3);
             this.flpmonhoc.Name = "flpmonhoc";
-            this.flpmonhoc.Size = new System.Drawing.Size(289, 323);
+            this.flpmonhoc.Size = new System.Drawing.Size(630, 139);
             this.flpmonhoc.TabIndex = 7;
             // 
             // lblMon
             // 
             this.lblMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblMon.Location = new System.Drawing.Point(3, 96);
+            this.lblMon.Location = new System.Drawing.Point(3, 18);
             this.lblMon.Name = "lblMon";
             this.lblMon.Size = new System.Drawing.Size(79, 32);
             this.lblMon.TabIndex = 6;
@@ -609,6 +607,8 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.dtvBangdiem);
+            this.panel6.Controls.Add(this.flpmonhoc);
+            this.panel6.Controls.Add(this.lblMon);
             this.panel6.Location = new System.Drawing.Point(3, 65);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(698, 480);
@@ -617,10 +617,10 @@
             // dtvBangdiem
             // 
             this.dtvBangdiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtvBangdiem.Location = new System.Drawing.Point(3, 3);
+            this.dtvBangdiem.Location = new System.Drawing.Point(3, 148);
             this.dtvBangdiem.Name = "dtvBangdiem";
             this.dtvBangdiem.RowTemplate.Height = 28;
-            this.dtvBangdiem.Size = new System.Drawing.Size(695, 473);
+            this.dtvBangdiem.Size = new System.Drawing.Size(695, 328);
             this.dtvBangdiem.TabIndex = 0;
             // 
             // tabTongketmon
