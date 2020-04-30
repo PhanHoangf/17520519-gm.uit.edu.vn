@@ -18,21 +18,21 @@ namespace WindowsFormsApp1
         public fGrade()
         {
             InitializeComponent();
-            loadClasses10();
-            loadClasses11();
             loadClasslist();
 
             //Unable các textbox trước khi ấn vào nút sửa.
             unable();
             dtgvDanhSachLop.DataSource = classList;
             addLopBinding();
+            grBoxThemLop.Visible = false;
+          
 
         }
         //Tạo BindingSoure
         BindingSource classList = new BindingSource();
         public void loadClasslist()
         {
-            string query = "select *from Lop";
+            string query = "select  *from Lop";
             classList.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
         public void addLopBinding()
@@ -57,6 +57,17 @@ namespace WindowsFormsApp1
             btnLuu.Enabled = false;
         }
         //------------------------------------------------//
+        //-----------------------------------------------//
+        //Clear các trường dữ liệu để thêm lớp
+        public void clear()
+        {
+            enable();
+            txbId.Text = "";
+            txbSiso.Text = "";
+            txbTenLop.Text = "";
+            txbTenLop.Focus();
+        }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             enable();
@@ -81,6 +92,39 @@ namespace WindowsFormsApp1
         {
             fGrade fGrade = new fGrade();
             fGrade.Close();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            grBoxThemLop.Visible = true;
+            
+        }
+
+        private void btnXacNhan_Click(object sender, EventArgs e)
+        {
+
+            string tenlop = txbThemTenLop.Text;
+            int siso = Convert.ToInt32(txbThemSiSoLop.Text);
+            MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(this, "Bạn có thực sự muốn thêm lớp này!","Xác nhận", messageBoxButtons,
+            MessageBoxIcon.Question, MessageBoxDefaultButton.Button1,
+            MessageBoxOptions.RightAlign);
+            if (result==DialogResult.Yes)
+            {
+                if (ClassDAO.Instance.InsertClass(tenlop, siso))
+                {
+                    MessageBox.Show("Bạn đã thêm thành công");
+                }
+                else MessageBox.Show("Thêm thất bại");
+            }
+            grBoxThemLop.Visible = false;
+            loadClasslist();
+        }
+
+        private void btnHuyThemLop_Click(object sender, EventArgs e)
+        {
+            grBoxThemLop.Visible = false;
         }
         //#region Methods
         //void loadClasses10()

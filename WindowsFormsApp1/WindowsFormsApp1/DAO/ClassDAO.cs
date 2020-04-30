@@ -43,5 +43,11 @@ namespace WindowsFormsApp1.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenlop, siso, idlop });
             return result > 0;
         }
+        public bool InsertClass(string tenlop,int siso)
+        {
+            string query = "INSERT INTO Lop (Tenlop, Siso) VALUES ( @Tenlop , @Siso )";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {tenlop, siso});
+            return result > 0;
+        }
     }
 }
