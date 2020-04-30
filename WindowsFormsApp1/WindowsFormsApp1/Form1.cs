@@ -51,11 +51,11 @@ namespace WindowsFormsApp1
             foreach (Subjects item in subjectslist)
   
             {
-                CheckBox checkBox = new CheckBox() { Width = SubjectDAO.cbxwidth, Height = SubjectDAO.cbxheight };
+                RadioButton checkBox = new RadioButton() { Width = SubjectDAO.cbxwidth, Height = SubjectDAO.cbxheight };
                 checkBox.Text = item.TenMon;
-                checkBox.CheckedChanged += CheckBox_CheckedChanged;
+                //checkBox.CheckedChanged += CheckBox_CheckedChanged;
                 checkBox.Tag = item;
-                checkBox.CheckStateChanged += CheckBox_CheckStateChanged;
+                //checkBox.CheckStateChanged += CheckBox_CheckStateChanged;
                 flpmonhoc.Controls.Add(checkBox);
                 
             }      

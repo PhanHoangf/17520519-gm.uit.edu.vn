@@ -66,8 +66,6 @@
             this.dtgvDanhSachHs = new System.Windows.Forms.DataGridView();
             this.tabPageDiem = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.flpmonhoc = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblMon = new System.Windows.Forms.Label();
             this.btnnhapdiem = new System.Windows.Forms.Button();
             this.txtSisodiem = new System.Windows.Forms.TextBox();
             this.txtTenlopdiem = new System.Windows.Forms.TextBox();
@@ -77,6 +75,8 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dtvBangdiem = new System.Windows.Forms.DataGridView();
+            this.flpmonhoc = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblMon = new System.Windows.Forms.Label();
             this.tabTongketmon = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -521,22 +521,6 @@
             this.panel8.Size = new System.Drawing.Size(295, 539);
             this.panel8.TabIndex = 1;
             // 
-            // flpmonhoc
-            // 
-            this.flpmonhoc.Location = new System.Drawing.Point(65, 3);
-            this.flpmonhoc.Name = "flpmonhoc";
-            this.flpmonhoc.Size = new System.Drawing.Size(630, 139);
-            this.flpmonhoc.TabIndex = 7;
-            // 
-            // lblMon
-            // 
-            this.lblMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblMon.Location = new System.Drawing.Point(3, 18);
-            this.lblMon.Name = "lblMon";
-            this.lblMon.Size = new System.Drawing.Size(79, 32);
-            this.lblMon.TabIndex = 6;
-            this.lblMon.Text = "Môn:";
-            // 
             // btnnhapdiem
             // 
             this.btnnhapdiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -622,6 +606,22 @@
             this.dtvBangdiem.RowTemplate.Height = 28;
             this.dtvBangdiem.Size = new System.Drawing.Size(695, 328);
             this.dtvBangdiem.TabIndex = 0;
+            // 
+            // flpmonhoc
+            // 
+            this.flpmonhoc.Location = new System.Drawing.Point(65, 3);
+            this.flpmonhoc.Name = "flpmonhoc";
+            this.flpmonhoc.Size = new System.Drawing.Size(630, 139);
+            this.flpmonhoc.TabIndex = 7;
+            // 
+            // lblMon
+            // 
+            this.lblMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblMon.Location = new System.Drawing.Point(3, 18);
+            this.lblMon.Name = "lblMon";
+            this.lblMon.Size = new System.Drawing.Size(79, 32);
+            this.lblMon.TabIndex = 6;
+            this.lblMon.Text = "Môn:";
             // 
             // tabTongketmon
             // 

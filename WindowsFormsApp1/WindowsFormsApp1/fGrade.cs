@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,113 +20,170 @@ namespace WindowsFormsApp1
             InitializeComponent();
             loadClasses10();
             loadClasses11();
-            loadClasses12();
+            loadClasslist();
+
+            //Unable các textbox trước khi ấn vào nút sửa.
+            unable();
+            dtgvDanhSachLop.DataSource = classList;
+            addLopBinding();
+
+        }
+        //Tạo BindingSoure
+        BindingSource classList = new BindingSource();
+        public void loadClasslist()
+        {
+            string query = "select *from Lop";
+            classList.DataSource = DataProvider.Instance.ExecuteQuery(query);
+        }
+        public void addLopBinding()
+        {
+            txbId.DataBindings.Add("Text", dtgvDanhSachLop.DataSource, "iDlop");
+            txbTenLop.DataBindings.Add("Text", dtgvDanhSachLop.DataSource, "Tenlop");
+            txbSiso.DataBindings.Add("Text", dtgvDanhSachLop.DataSource, "Siso");
+        }
+        //-------------------------------------------------//
+        //Enable và unable các textbox chỉnh sửa thông tin lớp
+        public void enable()
+        {
+            txbSiso.Enabled = true;
+            txbTenLop.Enabled = true;
+            btnLuu.Enabled = true;
+        }
+        public void unable()
+        {
+            txbId.Enabled = false;
+            txbSiso.Enabled = false;
+            txbTenLop.Enabled = false;
+            btnLuu.Enabled = false;
+        }
+        //------------------------------------------------//
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            enable();
+            
         }
 
-
-
-        #region Methods
-        void loadClasses10()
+        private void btnLuu_Click(object sender, EventArgs e)
         {
-            string query = "Dslop10";
-            List<Classes> classesList = ClassDAO.Instance.LoadClassList(query);
-
-            foreach (Classes item in classesList)
+            int idlop = Convert.ToInt32(txbId.Text);
+            string tenlop = txbTenLop.Text;
+            int Siso = Convert.ToInt32(txbSiso.Text);
+            if (ClassDAO.Instance.UpdateClassList(idlop, tenlop, Siso))
             {
-                Button btn = new Button() { Width = ClassDAO.btnWidth, Height = ClassDAO.btnHeight };
-                btn.Text = item.TenLop;
-                btn.Click += Btn_Click;
-                btn.Tag = item;
-                flpKhoi10.Controls.Add(btn);
+                MessageBox.Show("Bạn đã cập nhật thành công");
             }
+            else MessageBox.Show("Cập nhật xảy ra lỗi");
+            loadClasslist();
+            unable();
         }
 
-       
-
-        void loadClasses11()
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-            string query = "USP_Dslop11";
-            List<Classes> classesList = ClassDAO.Instance.LoadClassList(query);
-
-            foreach (Classes item in classesList)
-            {
-                Button btn = new Button() { Width = ClassDAO.btnWidth, Height = ClassDAO.btnHeight };
-                btn.Text = item.TenLop;
-                flpKhoi11.Controls.Add(btn);
-                btn.Click += Btn_Click1;
-                btn.Tag = item;
-            }
+            fGrade fGrade = new fGrade();
+            fGrade.Close();
         }
+        //#region Methods
+        //void loadClasses10()
+        //{
+        //    string query = "Dslop10";
+        //    List<Classes> classesList = ClassDAO.Instance.LoadClassList(query);
 
-        
-
-        void loadClasses12()
-        {
-            string query = "USP_Dslop12";
-            List<Classes> classesList = ClassDAO.Instance.LoadClassList(query);
-
-            foreach (Classes item in classesList)
-            {
-                Button btn = new Button() { Width = ClassDAO.btnWidth, Height = ClassDAO.btnHeight };
-                btn.Text = item.TenLop;
-                btn.Tag = item;
-                btn.Click += Btn_Click2;
-                flpKhoi12.Controls.Add(btn);
-            }
-        }
+        //    foreach (Classes item in classesList)
+        //    {
+        //        Button btn = new Button() { Width = ClassDAO.btnWidth, Height = ClassDAO.btnHeight };
+        //        btn.Text = item.TenLop;
+        //        btn.Click += Btn_Click;
+        //        btn.Tag = item;
+        //        flpKhoi10.Controls.Add(btn);
+        //    }
+        //}
 
 
 
+        //void loadClasses11()
+        //{
+        //    string query = "USP_Dslop11";
+        //    List<Classes> classesList = ClassDAO.Instance.LoadClassList(query);
+
+        //    foreach (Classes item in classesList)
+        //    {
+        //        Button btn = new Button() { Width = ClassDAO.btnWidth, Height = ClassDAO.btnHeight };
+        //        btn.Text = item.TenLop;
+        //        flpKhoi11.Controls.Add(btn);
+        //        btn.Click += Btn_Click1;
+        //        btn.Tag = item;
+        //    }
+        //}
 
 
-        #endregion
+
+        //void loadClasses12()
+        //{
+        //    string query = "USP_Dslop12";
+        //    List<Classes> classesList = ClassDAO.Instance.LoadClassList(query);
+
+        //    foreach (Classes item in classesList)
+        //    {
+        //        Button btn = new Button() { Width = ClassDAO.btnWidth, Height = ClassDAO.btnHeight };
+        //        btn.Text = item.TenLop;
+        //        btn.Tag = item;
+        //        btn.Click += Btn_Click2;
+        //        flpKhoi12.Controls.Add(btn);
+        //    }
+        //}
 
 
-        #region Events
-        //Hiển thị ds lớp 12
-        private void Btn_Click2(object sender, EventArgs e)
-        {
-            int ClassID = ((sender as Button).Tag as Classes).ID;
-            string ClassName = ((sender as Button).Tag as Classes).TenLop;
-            fInfo info = new fInfo();
-            info.ID1 = ClassID;
-            info.ClassName1 = ClassName;
-            info.ShowDialog();
-        }
-        //Hiển thị ds lớp 11
-        private void Btn_Click1(object sender, EventArgs e)
-        {
-            int ClassID = ((sender as Button).Tag as Classes).ID;
-            string ClassName = ((sender as Button).Tag as Classes).TenLop;
-            fInfo info = new fInfo();
-            info.ID1 = ClassID;
-            info.ClassName1 = ClassName;
-            info.ShowDialog();
-        }
-        //Hiển thị ds lớp 10
-        private void Btn_Click(object sender, EventArgs e)
-        {
-            int ClassID = ((sender as Button).Tag as Classes).ID;
-            string ClassName = ((sender as Button).Tag as Classes).TenLop;
-            fInfo info = new fInfo();
-            info.ID1 = ClassID;
-            info.ClassName1 = ClassName;
-            info.ShowDialog();
-           
-        }
-        private void btnQuay_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-        private void btnXem_Click(object sender, EventArgs e)
-        {
-            //fInfo info = new fInfo();
-            //info.ShowDialog();
-            //this.Hide();
-        }
-        #endregion
 
-       
+
+        //#endregion
+
+
+        //#region Events
+        ////Hiển thị ds lớp 12
+        //private void Btn_Click2(object sender, EventArgs e)
+        //{
+        //    int ClassID = ((sender as Button).Tag as Classes).ID;
+        //    string ClassName = ((sender as Button).Tag as Classes).TenLop;
+        //    fInfo info = new fInfo();
+        //    info.ID1 = ClassID;
+        //    info.ClassName1 = ClassName;
+        //    info.ShowDialog();
+        //}
+        ////Hiển thị ds lớp 11
+        //private void Btn_Click1(object sender, EventArgs e)
+        //{
+        //    int ClassID = ((sender as Button).Tag as Classes).ID;
+        //    string ClassName = ((sender as Button).Tag as Classes).TenLop;
+        //    fInfo info = new fInfo();
+        //    info.ID1 = ClassID;
+        //    info.ClassName1 = ClassName;
+        //    info.ShowDialog();
+        //}
+        ////Hiển thị ds lớp 10
+        //private void Btn_Click(object sender, EventArgs e)
+        //{
+        //    int ClassID = ((sender as Button).Tag as Classes).ID;
+        //    string ClassName = ((sender as Button).Tag as Classes).TenLop;
+        //    fInfo info = new fInfo();
+        //    info.ID1 = ClassID;
+        //    info.ClassName1 = ClassName;
+        //    info.ShowDialog();
+
+        //}
+        //private void btnQuay_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //}
+
+        //private void btnXem_Click(object sender, EventArgs e)
+        //{
+        //    //fInfo info = new fInfo();
+        //    //info.ShowDialog();
+        //    //this.Hide();
+        //}
+        //#endregion
+
+
     }
 }

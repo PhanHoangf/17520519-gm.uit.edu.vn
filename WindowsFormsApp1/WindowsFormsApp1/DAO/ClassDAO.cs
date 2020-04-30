@@ -37,5 +37,11 @@ namespace WindowsFormsApp1.DAO
             }
             return classesList;
         }
+        public bool UpdateClassList(int idlop, string tenlop, int siso)
+        {
+            string query = "UPDATE Lop SET Tenlop = @Tenlop , Siso = @Siso where iDlop = @iDlop ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenlop, siso, idlop });
+            return result > 0;
+        }
     }
 }
