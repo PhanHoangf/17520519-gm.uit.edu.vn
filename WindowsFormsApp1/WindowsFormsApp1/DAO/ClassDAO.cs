@@ -49,5 +49,11 @@ namespace WindowsFormsApp1.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {tenlop, siso});
             return result > 0;
         }
+        public bool DeleteClass(int idlop)
+        {
+            string query = "DELETE FROM Lop WHERE iDlop = @iDlop ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idlop });
+            return result > 0;
+        }
     }
 }

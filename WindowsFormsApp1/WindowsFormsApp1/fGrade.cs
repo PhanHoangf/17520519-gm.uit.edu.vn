@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
-
 namespace WindowsFormsApp1
 {
     public partial class fGrade : Form
@@ -19,20 +18,20 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             loadClasslist();
-
             //Unable các textbox trước khi ấn vào nút sửa.
             unable();
             dtgvDanhSachLop.DataSource = classList;
             addLopBinding();
             grBoxThemLop.Visible = false;
-          
+           
+            
 
         }
         //Tạo BindingSoure
         BindingSource classList = new BindingSource();
         public void loadClasslist()
         {
-            string query = "select  *from Lop";
+            string query = "select *from Lop ORDER BY Tenlop ASC";
             classList.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
         public void addLopBinding()
@@ -125,6 +124,21 @@ namespace WindowsFormsApp1
         private void btnHuyThemLop_Click(object sender, EventArgs e)
         {
             grBoxThemLop.Visible = false;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            int idlop = Convert.ToInt32(txbId.Text);
+            MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(this, "Bạn muốn xóa lớp này!", "Xác nhận", messageBoxButtons);
+            if(result==DialogResult.Yes)
+            {
+                if (ClassDAO.Instance.DeleteClass(idlop))
+                    MessageBox.Show("Xóa thành công");
+                else MessageBox.Show("Có lỗi khi xóa");
+            }
+            loadClasslist();
         }
         //#region Methods
         //void loadClasses10()
