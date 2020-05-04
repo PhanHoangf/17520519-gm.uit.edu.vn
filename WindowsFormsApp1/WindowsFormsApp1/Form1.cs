@@ -4,11 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
+using System.Text.RegularExpressions;
+using WindowsFormsApp1.BUS;
 
 namespace WindowsFormsApp1
 {
@@ -28,6 +31,15 @@ namespace WindowsFormsApp1
             }
         }
 
+        public static bool IsValidEmail(string email)
+        {
+            Regex rx = new Regex(
+            @"^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$");
+            if (rx.IsMatch(email) == true)
+                return true;
+            else return false;
+        }
+
         public string ClassName1 { get => ClassName; set => ClassName = value; }
         #endregion
 
@@ -41,7 +53,10 @@ namespace WindowsFormsApp1
             dtgvDanhSachHocSinh.DataSource = StudentList;
             AddHsBinding();
             LoadDanhSachLop();
-
+            groupBox1.Enabled = false;
+            btnLuu.Enabled = false;
+            btnLuuThemhs.Visible = false;
+            btnHuy.Visible = false;
         }
 
 
@@ -98,23 +113,40 @@ namespace WindowsFormsApp1
             txbEmail.DataBindings.Add("Text", dtgvDanhSachHocSinh.DataSource, "Email");
             txbTBHKI.DataBindings.Add("Text", dtgvDanhSachHocSinh.DataSource, "TBHKI");
             txbTBHKII.DataBindings.Add("Text", dtgvDanhSachHocSinh.DataSource, "TBHKII");
+            cbTenLop.DataBindings.Add("Text", dtgvDanhSachHocSinh.DataSource, "Tenlop");
         }
 
        
-        public void LoadDanhSachLop() //add lớp vào combobox
+        public void LoadDanhSachLop() //add lớp vào combobox cbDanhSachLop
         {
             string query = "Select *from Lop";
             List<Classes> classesList = ClassDAO.Instance.LoadClassList(query);
             foreach( Classes item in classesList)
             {
                 cbDanhSachLop.Items.Add(item.TenLop);
+                cbTenLop.Items.Add(item.TenLop);
             }
             cbDanhSachLop.SelectedIndexChanged += CbDanhSachLop_SelectedIndexChanged;
         }
-
+        public int findIndex(string a)
+        {
+            int index=-1;
+            string query = "Select *from Lop";
+            List<Classes> classesList = ClassDAO.Instance.LoadClassList(query);
+            foreach (Classes item in classesList)
+            {
+                if (item.TenLop == a)
+                {
+                    index = item.ID;
+                    return index;
+                }
+            }
+            return index;
+        }
         private void CbDanhSachLop_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadHocSinhFromLop(cbDanhSachLop.Text);
+            
         }
 
         public void LoadHocSinhFromLop(string tenlop)
@@ -141,45 +173,121 @@ namespace WindowsFormsApp1
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        public void CheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            
-            
-                int SubjectID = ((sender as CheckBox).Tag as Subjects).ID;
-                loadBangdiem(SubjectID);
-                
-                //dtvBangdiem.Controls.Clear();3
-
-        }
-
-        private void CheckBox_CheckStateChanged(object sender, EventArgs e)
-        {
-            //dtvBangdiem.Controls.Clear();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            Inserths hs = new Inserths();
-            hs.IDlop1 = ID1;
-            hs.Show();
-        }
 
         #endregion
-
-        private void btnxem_Click(object sender, EventArgs e)
-        {
-            LoadDanhSachHs();
-        }
 
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            groupBox1.Enabled = true;
+            btnLuu.Enabled = true;
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txbID.Text);
+            string hoten = txbHoTen.Text;
+            string gioitinh = cbGioiTinh.Text.ToString();
+            DateTime ngaysinh = dtpNgaySinh.Value;
+            string diachi = txbDiaChi.Text;
+            string email = txbEmail.Text;
+
+            if (StudentDAO.Instance.UpdateHocsinh(id, hoten, gioitinh, ngaysinh, diachi, email))
+            {
+                MessageBox.Show("Sửa thành công");
+            }
+            else
+            {
+                MessageBox.Show("có lỗi");
+            }
+            LoadDanhSachHs();
+            btnLuu.Enabled = false;
+            groupBox1.Enabled = false;
+        }
+
+        private void btnThoat_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+        public void clear()
+        {
+            txbID.Clear();
+            txbHoTen.Clear();
+            txbDiaChi.Clear();
+            txbEmail.Clear();
+        }
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            btnLuuThemhs.Visible = true;
+            groupBox1.Enabled = true;
+            btnHuy.Visible = true;
+            clear();
+            txbID.Visible = false;
+        }
+
+        private void btnLuuThemhs_Click(object sender, EventArgs e)
+        {
+            int idlop = findIndex(cbTenLop.Text);
+            string hoten = txbHoTen.Text;
+            string gioitinh = cbGioiTinh.Text;
+            DateTime ngaysinh = dtpNgaySinh.Value;
+            string diachi = txbDiaChi.Text;
+            string email = txbEmail.Text;
+            MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(this, "Bạn muốn Thêm học sinh này!", "Xác nhận", messageBoxButtons);
+            if (result == DialogResult.Yes)
+            {
+                if (StudentDAO.Instance.InsertHocsinh(idlop, hoten, gioitinh, ngaysinh, diachi, email))
+                {
+                    MessageBox.Show("Thêm thành công");
+                }
+                else
+                {
+                    MessageBox.Show("có lỗi");
+                }
+            }
+            LoadDanhSachHs();
+            groupBox1.Enabled = false;
+            btnLuuThemhs.Visible = false;
+            
+        }
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            int idhocsinh = Convert.ToInt32(txbID.Text);
+            MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result = MessageBox.Show(this, "Bạn muốn xóa học sinh này!", "Xác nhận", messageBoxButtons);
+            if (result == DialogResult.Yes)
+            {
+                if (StudentDAO.Instance.DeleteHocsinh(idhocsinh))
+                    MessageBox.Show("Xóa thành công");
+                else MessageBox.Show("Có lỗi khi xóa");
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            LoadDanhSachHs();
+            groupBox1.Enabled = false;
+            btnLuuThemhs.Visible = false;
+            btnHuy.Visible = false;
+            txbID.Visible = true;
+            cbDanhSachLop.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int a = dateTimePicker1.Value.Year;
+            textBox1.Text = (Student_BUS.Instance1.checkAge(a)).ToString();
+        }
+
 
         //private void btnXoa_Click(object sender, EventArgs e)
         //{

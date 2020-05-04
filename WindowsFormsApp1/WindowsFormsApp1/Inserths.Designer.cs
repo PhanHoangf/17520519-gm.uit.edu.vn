@@ -88,7 +88,7 @@
             // 
             this.txbgioitinh.Location = new System.Drawing.Point(641, 95);
             this.txbgioitinh.Name = "txbgioitinh";
-            this.txbgioitinh.Size = new System.Drawing.Size(82, 26);
+            this.txbgioitinh.Size = new System.Drawing.Size(97, 26);
             this.txbgioitinh.TabIndex = 15;
             // 
             // txbidlop
