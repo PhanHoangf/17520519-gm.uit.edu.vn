@@ -59,6 +59,10 @@ CREATE TABLE DanhSachLop(
 	CONSTRAINT fk_DShocsinh FOREIGN KEY (iDhocsinh) REFERENCES DSHocSinh(iDhocsinh)
 )
 
+CREATE TABLE BangQuiDinh(
+	
+)
+
 INSERT INTO Lop(TenLop) values
 ('10A1'),
 ('10A2'),
@@ -105,7 +109,7 @@ GO
 EXEC USP_Dslop12
 
 select * from DSHocSinh
-select *from Lop
+select *from Lop ORDER BY Tenlop ASC
 
 delete from MonHoc
 delete from Lop
@@ -160,7 +164,10 @@ INSERT INTO DSHocSinh(iDlop,Hoten,Gioitinh,Ngaysinh,Diachi,Email) VALUES
 (4,N'Tiến văn C',N'Nữ','2004-08-01','c/3','c@gmail.com'),
 (4,N'Tiến văn D',N'Nam','2004-02-15','d/3','d@gmail.com')
 
-
+INSERT INTO DSHocSinh(iDlop,Hoten,Gioitinh,Ngaysinh,Diachi,Email) VALUES
+(6,N'Nguyễn Văn A',N'Nam','2003-03-03',N'a/2','a@gmail.com'),
+(7,N'Nguyễn Văn B',N'Nam','2003-03-03',N'a/2','a@gmail.com'),
+(9,N'Nguyễn Văn C',N'Nam','2002-03-03',N'a/2','a@gmail.com')
 
 select *from DSHocSinh where iDlop=1
 
@@ -183,11 +190,53 @@ INSERT INTO MonHoc(Tenmon) values
 (N'Địa'),
 (N'Thể dục')
 
-select dshs.Hoten,mh.Tenmon,BD.Diem15p,BD.Diem1t,BD.HK,l.Tenlop,BD.idmonhoc from BangDiemMon as BD,DSHocSinh as dshs,MonHoc as mh ,Lop as l
-where dshs.iDhocsinh=BD.iDhocsinh and mh.iDmonhoc=2 and l.iDlop=1 and BD.idmonhoc=mh.iDmonhoc
 
-select bd.idmonhoc,mh.iDmonhoc,mh.Tenmon from BangDiemMon as bd,MonHoc as mh where mh.iDmonhoc=2 and bd.idmonhoc=mh.iDmonhoc
-select hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,bd.Diemtbm from BangDiemMon as bd, DSHocSinh as hs where bd.idlop=1 and bd.iDhocsinh=hs.iDhocsinh and bd.idmonhoc=1
+select hs.Hoten,mh.Tenmon,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6 'Diemtbm' 
+from BangDiemMon as bd, DSHocSinh as hs, MonHoc as mh where bd.iDhocsinh=hs.iDhocsinh and bd.idmonhoc=mh.iDmonhoc
+
+select hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6 "Diemtbm" 
+from BangDiemMon as bd
+full outer join  DSHocSinh as hs 
+on bd.iDhocsinh=hs.iDhocsinh
+
+select hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6 "Diemtbm" 
+from DSHocSinh as hs
+Left join BangDiemMon as bd
+on bd.iDhocsinh = hs.iDhocsinh
+
+go
+
+create proc USP_DanhSachBangDiemTheoLop 
+@MaLop int
+AS
+BEGIN
+	select hs.iDhocsinh, hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6 "Diemtbm" 
+	from DSHocSinh as hs
+	Left join BangDiemMon as bd
+	on bd.iDhocsinh = hs.iDhocsinh
+	where hs.iDlop = @MaLop
+END
+
+go
+
+create proc USP_DanhSachBangDiem 
+AS
+BEGIN
+	select hs.iDhocsinh, hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6 "Diemtbm" 
+	from DSHocSinh as hs
+	Left join BangDiemMon as bd
+	on bd.iDhocsinh = hs.iDhocsinh
+END
+
+select hs.iDhocsinh, hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6 "Diemtbm" 
+from DSHocSinh as hs
+Left join BangDiemMon as bd
+on bd.iDhocsinh = hs.iDhocsinh
+where hs.iDlop = 1
+
+EXEC USP_DanhSachBangDiemTheoLop @MaLop = '1'
+
+EXEC USP_DanhSachBangDiem
 
 select *from BangDiemMon
 INSERT INTO BangDiemMon (iDhocsinh,idmonhoc,idlop,Diem15p,Diem1t,HK) values
@@ -206,3 +255,4 @@ INSERT INTO BangDiemMon (iDhocsinh,idmonhoc,idlop,Diem15p,Diem1t,HK) values
 (14,2,1,10,10,10),
 (16,2,1,9,9,9.5)
 
+SELECT dshs.iDhocsinh, dshs.Hoten, l.Tenlop, dshs.Ngaysinh,dshs.Gioitinh,dshs.Diachi,dshs.Email,dshs.TBHKI,dshs.TBHKII FROM DSHocSinh as dshs,Lop as l where dshs.iDlop = l.iDlop and l.Tenlop = '11A3'
