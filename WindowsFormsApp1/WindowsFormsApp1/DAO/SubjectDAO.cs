@@ -43,5 +43,26 @@ namespace WindowsFormsApp1.DAO
             }
             return subjectslist;
         }
+        
+        public bool updateSubject(int id,string tenmon, float diemdat)
+        {
+            string query = "UPDATE MonHoc SET Tenmon = @Tenmon , DiemDat = @DiemDat WHERE iDmonhoc = @iDmonhoc ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenmon,diemdat,id });
+            return result > 0;
+        }
+
+        public bool insertSubject(string tenmon, float diemdat)
+        {
+            string query = "INSERT INTO MonHoc (Tenmon,DiemDat) VALUES ( @Tenmon , @DiemDat )";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenmon, diemdat });
+            return result > 0;
+        }
+
+        public bool deleteSubject(int id)
+        {
+            string query = " DELETE FROM MonHoc WHERE iDmonhoc = @iDmonhoc ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id });
+            return result > 0;
+        }
     }
 }

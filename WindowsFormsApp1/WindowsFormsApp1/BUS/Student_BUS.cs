@@ -26,7 +26,7 @@ namespace WindowsFormsApp1.BUS
 
         }
 
-        public bool checkEmail(string email)
+        public bool checkEmail( string email )
         {
 
             Regex rx = new Regex(
@@ -38,13 +38,15 @@ namespace WindowsFormsApp1.BUS
 
         }
 
-        public bool checkAge(int NamSinh)
+        public bool checkAge( int NamSinh )
         {
             int dt = DateTime.Now.Year;
+
             if ( 15 <= ( dt - NamSinh ) && ( dt-NamSinh ) <= 18 )
             {
                 return true;
             }
+
             return false;
         }
     }

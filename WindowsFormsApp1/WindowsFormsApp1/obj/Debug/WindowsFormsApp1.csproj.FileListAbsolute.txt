@@ -16,10 +16,15 @@ D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fLogin.resources
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fGrade.resources
-D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fInfo.resources
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Inserths.resources
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fStudent.resources
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fAccountInfo.resources
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fMonHoc.resources
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\XanderUI.dll
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fBangDiem.resources
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete

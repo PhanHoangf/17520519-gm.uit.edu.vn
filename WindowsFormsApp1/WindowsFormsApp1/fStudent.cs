@@ -12,39 +12,52 @@ using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 using System.Text.RegularExpressions;
 using WindowsFormsApp1.BUS;
+using System.Drawing.Design;
 
 namespace WindowsFormsApp1
 {
-    public partial class fInfo : Form
+    public partial class fStudent : Form
     {
-        #region get ID,ClassName
-        private int ID;
-        private string ClassName;
-        public int ID1 {
-            get
-            {
-                return ID;
-            }
-            set
-            {
-                ID = value;
-            }
-        }
-
-        public static bool IsValidEmail(string email)
+        //Kiểm tra giá trị đầu vào
+        public bool check(string hoten, string gioitinh, int namsinh, string diachi, string email)
         {
-            Regex rx = new Regex(
-            @"^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z](-?[a-zA-Z0-9])*(\.[a-zA-Z](-?[a-zA-Z0-9])*)+$");
-            if (rx.IsMatch(email) == true)
-                return true;
-            else return false;
+            bool kt=false;
+            if(hoten=="")
+            {
+                MessageBox.Show("Vui lòng nhập họ tên!");
+                txbHoTen.Focus();
+                return kt;
+            }
+            if (gioitinh == "")
+            {
+                MessageBox.Show("Vui lòng xác nhận giới tính!");
+                return kt;
+            }
+            if(Student_BUS.Instance1.checkAge(namsinh)==false)
+            {
+                MessageBox.Show("Năm sinh không hợp lệ!");
+                return kt;
+            }
+            if (diachi == "")
+            {
+                MessageBox.Show("Vui lòng nhập địa chỉ!");
+                txbDiaChi.Focus();
+                return kt;
+            }
+            if(Student_BUS.Instance1.checkEmail(email)==false)
+            {
+                MessageBox.Show("Email phải có dạng abc@cda.com");
+                txbEmail.Focus();
+                return kt;
+            }    
+            return true;
         }
 
-        public string ClassName1 { get => ClassName; set => ClassName = value; }
-        #endregion
+
+       
 
         BindingSource StudentList = new BindingSource();
-        public fInfo()
+        public fStudent()
         {
 
             InitializeComponent();
@@ -61,46 +74,12 @@ namespace WindowsFormsApp1
 
 
         #region Method
-        //Lấy danh sách môn học
-        public void Loadmonhoc()
-        {
-            string query = "select *from MonHoc";
-            List<Subjects> subjectslist = SubjectDAO.Instance.loadSubjects(query);
-          
-            foreach (Subjects item in subjectslist)
-  
-            {
-                RadioButton checkBox = new RadioButton() { Width = SubjectDAO.cbxwidth, Height = SubjectDAO.cbxheight };
-                checkBox.Text = item.TenMon;
-                //checkBox.CheckedChanged += CheckBox_CheckedChanged;
-                checkBox.Tag = item;
-                //checkBox.CheckStateChanged += CheckBox_CheckStateChanged;
-                //flpmonhoc.Controls.Add(checkBox);
-                
-            }      
-        }
-
-      
-   
-   
-        //Hiển thị bảng điểm
-        public void loadBangdiem(int idmonhoc)
-        {
-
-            string query = "select hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6"+" Diemtbm "+" from BangDiemMon as bd, DSHocSinh as hs where bd.idlop=" + ID1 + " and bd.iDhocsinh=hs.iDhocsinh and bd.idmonhoc=" + idmonhoc + "";
-            //dtvBangdiem.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
-        }
         //Hiển thị danh sách học sinh trong lớp
 
         public void LoadDanhSachHs()
         {
-
-
-            //string query = "select dshs.iDhocsinh, dshs.Hoten, l.Tenlop, dshs.Ngaysinh,dshs.Gioitinh,dshs.Diachi,dshs.Email,dshs.TBHKI,dshs.TBHKII  from DSHocSinh as dshs, Lop as l where dshs.iDlop = l.iDlop and l.iDlop =" + ID1 + "";
             string query = "SELECT dshs.iDhocsinh, dshs.Hoten, l.Tenlop, dshs.Ngaysinh,dshs.Gioitinh,dshs.Diachi,dshs.Email,dshs.TBHKI,dshs.TBHKII FROM DSHocSinh as dshs,Lop as l where dshs.iDlop = l.iDlop ";
             StudentList.DataSource = DataProvider.Instance.ExecuteQuery(query);
-
         }
 
         public void AddHsBinding()
@@ -156,33 +135,6 @@ namespace WindowsFormsApp1
         }
         #endregion
 
-        #region Events
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            this.Close();
-          
-        }
-
-        private void fInfo_Load(object sender, EventArgs e)
-        {
-            
-           
-            //Loadmonhoc();
-            
-            
-        }
-
-        
-
-
-        #endregion
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             groupBox1.Enabled = true;
@@ -197,23 +149,24 @@ namespace WindowsFormsApp1
             DateTime ngaysinh = dtpNgaySinh.Value;
             string diachi = txbDiaChi.Text;
             string email = txbEmail.Text;
-
-            if (StudentDAO.Instance.UpdateHocsinh(id, hoten, gioitinh, ngaysinh, diachi, email))
+            if (check(hoten, gioitinh, ngaysinh.Year, diachi, email) == false)
             {
-                MessageBox.Show("Sửa thành công");
+                return;
             }
             else
             {
-                MessageBox.Show("có lỗi");
+                if (StudentDAO.Instance.UpdateHocsinh(id, hoten, gioitinh, ngaysinh, diachi, email))
+                {
+                    MessageBox.Show("Sửa thành công");
+                }
+                else
+                {
+                    MessageBox.Show("có lỗi");
+                }
+                LoadDanhSachHs();
+                btnLuu.Enabled = false;
+                groupBox1.Enabled = false;
             }
-            LoadDanhSachHs();
-            btnLuu.Enabled = false;
-            groupBox1.Enabled = false;
-        }
-
-        private void btnThoat_Click_1(object sender, EventArgs e)
-        {
-            
         }
         public void clear()
         {
@@ -239,24 +192,30 @@ namespace WindowsFormsApp1
             DateTime ngaysinh = dtpNgaySinh.Value;
             string diachi = txbDiaChi.Text;
             string email = txbEmail.Text;
-            MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
-            DialogResult result;
-            result = MessageBox.Show(this, "Bạn muốn Thêm học sinh này!", "Xác nhận", messageBoxButtons);
-            if (result == DialogResult.Yes)
+            if (check(hoten, gioitinh, ngaysinh.Year, diachi, email) == false)
             {
-                if (StudentDAO.Instance.InsertHocsinh(idlop, hoten, gioitinh, ngaysinh, diachi, email))
-                {
-                    MessageBox.Show("Thêm thành công");
-                }
-                else
-                {
-                    MessageBox.Show("có lỗi");
-                }
+                return;
             }
-            LoadDanhSachHs();
-            groupBox1.Enabled = false;
-            btnLuuThemhs.Visible = false;
-            
+            else
+            {
+                MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+                DialogResult result;
+                result = MessageBox.Show(this, "Bạn muốn Thêm học sinh này!", "Xác nhận", messageBoxButtons);
+                if (result == DialogResult.Yes)
+                {
+                    if (StudentDAO.Instance.InsertHocsinh(idlop, hoten, gioitinh, ngaysinh, diachi, email))
+                    {
+                        MessageBox.Show("Thêm thành công");
+                    }
+                    else
+                    {
+                        MessageBox.Show("có lỗi");
+                    }
+                }
+                LoadDanhSachHs();
+                groupBox1.Enabled = false;
+                btnLuuThemhs.Visible = false;
+            }
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -281,46 +240,5 @@ namespace WindowsFormsApp1
             txbID.Visible = true;
             cbDanhSachLop.Text = "";
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            int a = dateTimePicker1.Value.Year;
-            textBox1.Text = (Student_BUS.Instance1.checkAge(a)).ToString();
-        }
-
-
-        //private void btnXoa_Click(object sender, EventArgs e)
-        //{
-        //    int idhocsinh = Convert.ToInt32(txbid.Text);
-        //    if(StudentDAO.Instance.DeleteHocsinh(idhocsinh))
-        //    {
-        //        MessageBox.Show("Xóa thành công!");
-        //        LoadDanhSachHs();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Có lỗi khi xóa");
-        //    }
-        //}
-
-        //private void btnCapNhat_Click(object sender, EventArgs e)
-        //{
-        //    int id = Convert.ToInt32(txbid.Text);
-        //    string hoten = txbhoten.Text;
-        //    string gioitinh = txbgioitinh.Text.ToString();
-        //    DateTime ngaysinh = dtpNgaySinh.Value;
-        //    string diachi = txbdiachi.Text;
-        //    string email = txbemail.Text;
-
-        //    if (StudentDAO.Instance.UpdateHocsinh(id, hoten, gioitinh, ngaysinh, diachi, email))
-        //    {
-        //        MessageBox.Show("Sửa thành công");
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("có lỗi");
-        //    }
-        //    LoadDanhSachHs();
-        //}
     }
 }

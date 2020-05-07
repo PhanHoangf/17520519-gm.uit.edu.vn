@@ -345,7 +345,7 @@
             this.Controls.Add(this.lblDsKhoiLop);
             this.Name = "fGrade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Grade";
+            this.Text = "frmLOPHOC";
             this.grBoxThongTinLop.ResumeLayout(false);
             this.grBoxThongTinLop.PerformLayout();
             this.grBoxThemLop.ResumeLayout(false);

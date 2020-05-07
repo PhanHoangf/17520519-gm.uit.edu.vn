@@ -4,10 +4,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1.DAO
 {
-    class Account
+    public class Account
     {
         private static Account instance;
 
@@ -30,6 +31,38 @@ namespace WindowsFormsApp1.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query,new object[] {userName,passWord});
 
             return result.Rows.Count > 0;
+        }
+
+        public List<AccountDTO> loadDSAccount(string query)
+        {
+            List<AccountDTO> AccountList = new List<AccountDTO>();
+            DataTable data = new DataTable();
+            foreach(DataRow item in data.Rows)
+            {
+                AccountDTO account = new AccountDTO(item);
+                AccountList.Add(account);
+            }
+            return AccountList;
+        }
+
+        public bool insertTaiKhoan(string tentk, string matkhau, int quyen)
+        {
+            string query = "INSERT INTO TK (Tentk, MatKhau, Quyen) VALUES ( @Tentk , @MatKhau , @Quyen ) ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tentk, matkhau, quyen });
+            return result > 0;
+        }
+
+        public bool updateTaiKhoan(string tentk, string matkhau, int quyen)
+        {
+            string query = "UPDATE TK  SET MatKhau = @MatKhau , Quyen = @Quyen WHERE Tentk = @Tentk ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {  matkhau, quyen , tentk });
+            return result > 0;
+        }
+        public bool deleteTaiKhoan(string tentk)
+        {
+            string query = "DELETE FROM TK WHERE Tentk = @Tentk ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tentk });
+            return result > 0;
         }
     }
 }

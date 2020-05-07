@@ -80,6 +80,7 @@
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(199, 26);
             this.txtTaiKhoan.TabIndex = 3;
+            this.txtTaiKhoan.Text = "admin";
             // 
             // txtMk
             // 
@@ -87,6 +88,7 @@
             this.txtMk.Name = "txtMk";
             this.txtMk.Size = new System.Drawing.Size(199, 26);
             this.txtMk.TabIndex = 4;
+            this.txtMk.Text = "123456";
             // 
             // btnDangNhap
             // 
