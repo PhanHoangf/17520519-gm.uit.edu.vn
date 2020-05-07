@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
         {
             int id = Convert.ToInt32(txbIdMon.Text);
             string tenmon = txbTenMon.Text;
-            float diemdat = float.Parse(txbDiemDat.Text);
+            float diemdat = Convert.ToInt32(txbDiemDat.Text);
             if (flag == true)
             {
                 if (SubjectDAO.Instance.insertSubject( tenmon, diemdat))

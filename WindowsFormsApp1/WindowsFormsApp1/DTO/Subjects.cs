@@ -11,21 +11,21 @@ namespace WindowsFormsApp1.DTO
     {
         private string tenMon;
         private int iD;
-        private float diemDat;
-        public Subjects(int id,string tenmon, float diemdat)
+        private int diemDat;
+        public Subjects(int id,string tenmon, int diemdat)
         {
             this.ID = id;
-            this.TenMon = tenMon;
+            this.TenMon = tenmon;
             this.DiemDat = diemdat;
         }
         public Subjects(DataRow row)
         {
             this.ID = (int)row["iDmonhoc"];
             this.TenMon = row["Tenmon"].ToString();
-            this.DiemDat = (float)row["DiemDat"];
+            this.DiemDat = (int)row["DiemDat"];
         }
         public string TenMon { get => tenMon; set => tenMon = value; }
         public int ID { get => iD; set => iD = value; }
-        public float DiemDat { get => diemDat; set => diemDat = value; }
+        public int DiemDat { get => diemDat; set => diemDat = value; }
     }
 }

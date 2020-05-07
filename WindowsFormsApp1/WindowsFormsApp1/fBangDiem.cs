@@ -21,6 +21,8 @@ namespace WindowsFormsApp1
             dtgvDanhSachDiem.DataSource = ListBangDiem;
             loadDanhSachDiem();
             LoadDanhSachLop();
+            LoadDanhSachMonHoc();
+            dataBinding();
         }
 
 
@@ -48,6 +50,17 @@ namespace WindowsFormsApp1
             }
         }
 
+        //Add danh sach mon hoc vao combobox
+        public void LoadDanhSachMonHoc()
+        {
+            string query = "SELECT *FROM MonHoc";
+            List<Subjects> subjectList = SubjectDAO.Instance.loadSubjects(query);
+            foreach (Subjects item in subjectList)
+            {
+                cbDanhSachMon.Items.Add(item.TenMon);
+            }
+        }
+        //tìm id lớp
         public int findIdLop(string a)
         {
             string query = "SELECT *FROM Lop";
@@ -61,6 +74,41 @@ namespace WindowsFormsApp1
             }
             return -1;
         }
+
+        //tìm id học sinh
+        public int findIdHocSinh(string a)
+        {
+            string query = "SELECT *FROM DSHocSinh";
+            List<Student> studentList = StudentDAO.Instance.LoadHs(query);
+            foreach(Student item in studentList)
+            {
+                if(item.Hoten==a)
+                {
+                    return item.IDhocsinh;
+                }
+            }
+            return -1;
+        }
+        public int findIdMonHoc(string a)
+        {
+            string query = "SELECT *FROM MonHoc";
+            List<Subjects> subjectList = SubjectDAO.Instance.loadSubjects(query);
+            foreach (Subjects item in subjectList)
+            {
+                if (item.TenMon == a) { return item.ID; }
+            }
+            return -1;
+        }
+
+        public void dataBinding()
+        {
+            txbIdhocsinh.DataBindings.Add("Text", dtgvDanhSachDiem.DataSource, "iDhocsinh");
+            txbTenHs.DataBindings.Add("Text", dtgvDanhSachDiem.DataSource, "Hoten");
+            txb15.DataBindings.Add("Text", dtgvDanhSachDiem.DataSource, "Diem15p");
+            txb1t.DataBindings.Add("Text", dtgvDanhSachDiem.DataSource, "Diem1t");
+            txbDiemhk.DataBindings.Add("Text", dtgvDanhSachDiem.DataSource, "HK");
+        }
+
         #endregion
 
 
@@ -70,18 +118,33 @@ namespace WindowsFormsApp1
             loadDanhSachDiemFromLop(findIdLop(cbDanhSachLop.Text));
         }
 
-        private void xuiButton1_Click(object sender, EventArgs e)
+
+        private void btnNhapDiem_Click(object sender, EventArgs e)
         {
+            int idhocsinh = Convert.ToInt32(txbIdhocsinh.Text);
+            int idmon = findIdMonHoc(cbDanhSachMon.Text);
+            int idlop = findIdLop(cbDanhSachLop.Text);
+            float diem15p = float.Parse(txb15.Text);
+            float diem1t = float.Parse(txb1t.Text);
+            float diemhk = float.Parse(txbDiemhk.Text);
+            int hocki = Convert.ToInt32(cbHocki.Text);
+            if (BangdiemDAO.Instance.insertBangDiem(idhocsinh, idmon,idlop, diem15p, diem1t, diemhk, hocki))
+            {
+                MessageBox.Show("Nhập điểm thành công!");
+            }
+            else MessageBox.Show("Thêm thất bại!");
+            loadDanhSachDiemFromLop(findIdLop(cbDanhSachLop.Text));
 
         }
-
-       
 
         private void btnRefesh_Click(object sender, EventArgs e)
         {
             loadDanhSachDiem();
             cbDanhSachLop.Text = "";
         }
+
         #endregion
+
+      
     }
 }

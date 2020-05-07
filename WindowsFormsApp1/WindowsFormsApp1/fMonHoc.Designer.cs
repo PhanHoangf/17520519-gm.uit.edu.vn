@@ -29,11 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.btnRefresh = new XanderUI.XUISuperButton();
+            this.btnLuu = new XanderUI.XUISuperButton();
+            this.btnCapNhat = new XanderUI.XUISuperButton();
+            this.btnXoa = new XanderUI.XUISuperButton();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.btnThem = new XanderUI.XUISuperButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new XanderUI.XUIButton();
             this.txbSearchBox = new System.Windows.Forms.TextBox();
             this.txbIdMon = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,23 +51,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dtgvdanhsachmon = new System.Windows.Forms.DataGridView();
             this.xuiCustomGroupbox1 = new XanderUI.XUICustomGroupbox();
-            this.btnSearch = new XanderUI.XUIButton();
-            this.btnRefresh = new XanderUI.XUISuperButton();
-            this.btnLuu = new XanderUI.XUISuperButton();
-            this.btnCapNhat = new XanderUI.XUISuperButton();
-            this.btnXoa = new XanderUI.XUISuperButton();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.btnThem = new XanderUI.XUISuperButton();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.pnMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvdanhsachmon)).BeginInit();
             this.xuiCustomGroupbox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,6 +74,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1047, 71);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.subject;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox6.Location = new System.Drawing.Point(310, 10);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(63, 40);
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
             // 
             // label1
             // 
@@ -103,166 +114,6 @@
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(67, 537);
             this.pnMenu.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.groupBox1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(67, 71);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(980, 249);
-            this.panel3.TabIndex = 2;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.txbIdMon);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txbDiemDat);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txbTenMon);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(978, 247);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Thông tin môn học";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnSearch);
-            this.groupBox2.Controls.Add(this.txbSearchBox);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox2.Location = new System.Drawing.Point(3, 35);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(972, 66);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tìm kiếm";
-            // 
-            // txbSearchBox
-            // 
-            this.txbSearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbSearchBox.Location = new System.Drawing.Point(721, 29);
-            this.txbSearchBox.Name = "txbSearchBox";
-            this.txbSearchBox.Size = new System.Drawing.Size(183, 30);
-            this.txbSearchBox.TabIndex = 0;
-            // 
-            // txbIdMon
-            // 
-            this.txbIdMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txbIdMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbIdMon.Location = new System.Drawing.Point(792, 116);
-            this.txbIdMon.Name = "txbIdMon";
-            this.txbIdMon.Size = new System.Drawing.Size(180, 30);
-            this.txbIdMon.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(691, 117);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 29);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "ID Môn:";
-            // 
-            // txbDiemDat
-            // 
-            this.txbDiemDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbDiemDat.Location = new System.Drawing.Point(126, 179);
-            this.txbDiemDat.Name = "txbDiemDat";
-            this.txbDiemDat.Size = new System.Drawing.Size(180, 30);
-            this.txbDiemDat.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(6, 179);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 29);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Điểm đạt:";
-            // 
-            // txbTenMon
-            // 
-            this.txbTenMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbTenMon.Location = new System.Drawing.Point(126, 115);
-            this.txbTenMon.Name = "txbTenMon";
-            this.txbTenMon.Size = new System.Drawing.Size(180, 30);
-            this.txbTenMon.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(5, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 29);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Tên môn:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // dtgvdanhsachmon
-            // 
-            this.dtgvdanhsachmon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvdanhsachmon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvdanhsachmon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvdanhsachmon.Location = new System.Drawing.Point(3, 35);
-            this.dtgvdanhsachmon.Name = "dtgvdanhsachmon";
-            this.dtgvdanhsachmon.RowHeadersWidth = 62;
-            this.dtgvdanhsachmon.RowTemplate.Height = 28;
-            this.dtgvdanhsachmon.Size = new System.Drawing.Size(974, 250);
-            this.dtgvdanhsachmon.TabIndex = 0;
-            // 
-            // xuiCustomGroupbox1
-            // 
-            this.xuiCustomGroupbox1.BorderColor = System.Drawing.Color.Black;
-            this.xuiCustomGroupbox1.BorderWidth = 1;
-            this.xuiCustomGroupbox1.Controls.Add(this.dtgvdanhsachmon);
-            this.xuiCustomGroupbox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xuiCustomGroupbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.xuiCustomGroupbox1.Location = new System.Drawing.Point(67, 320);
-            this.xuiCustomGroupbox1.Name = "xuiCustomGroupbox1";
-            this.xuiCustomGroupbox1.ShowText = true;
-            this.xuiCustomGroupbox1.Size = new System.Drawing.Size(980, 288);
-            this.xuiCustomGroupbox1.TabIndex = 0;
-            this.xuiCustomGroupbox1.TabStop = false;
-            this.xuiCustomGroupbox1.Text = "Danh sách môn học";
-            this.xuiCustomGroupbox1.TextColor = System.Drawing.Color.Black;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearch.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnSearch.ButtonImage = global::WindowsFormsApp1.Properties.Resources.search;
-            this.btnSearch.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.btnSearch.ButtonText = "";
-            this.btnSearch.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.btnSearch.ClickTextColor = System.Drawing.Color.DodgerBlue;
-            this.btnSearch.CornerRadius = 5;
-            this.btnSearch.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btnSearch.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.btnSearch.HoverTextColor = System.Drawing.Color.DodgerBlue;
-            this.btnSearch.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
-            this.btnSearch.Location = new System.Drawing.Point(910, 18);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(54, 42);
-            this.btnSearch.TabIndex = 2;
-            this.btnSearch.TextColor = System.Drawing.Color.DodgerBlue;
-            this.btnSearch.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnRefresh
             // 
@@ -399,16 +250,166 @@
             this.btnThem.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // pictureBox6
+            // panel3
             // 
-            this.pictureBox6.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.subject;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox6.Location = new System.Drawing.Point(310, 10);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(63, 40);
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.groupBox1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(67, 71);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(980, 249);
+            this.panel3.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.groupBox1.Controls.Add(this.groupBox2);
+            this.groupBox1.Controls.Add(this.txbIdMon);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.txbDiemDat);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txbTenMon);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(978, 247);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Thông tin môn học";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnSearch);
+            this.groupBox2.Controls.Add(this.txbSearchBox);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.groupBox2.Location = new System.Drawing.Point(3, 35);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
+            this.groupBox2.Size = new System.Drawing.Size(972, 66);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearch.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnSearch.ButtonImage = global::WindowsFormsApp1.Properties.Resources.search;
+            this.btnSearch.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.btnSearch.ButtonText = "";
+            this.btnSearch.ClickBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.btnSearch.ClickTextColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearch.CornerRadius = 5;
+            this.btnSearch.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnSearch.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.btnSearch.HoverTextColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearch.ImagePosition = XanderUI.XUIButton.imgPosition.Center;
+            this.btnSearch.Location = new System.Drawing.Point(903, 25);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(54, 30);
+            this.btnSearch.TabIndex = 2;
+            this.btnSearch.TextColor = System.Drawing.Color.DodgerBlue;
+            this.btnSearch.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txbSearchBox
+            // 
+            this.txbSearchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbSearchBox.Location = new System.Drawing.Point(714, 25);
+            this.txbSearchBox.Name = "txbSearchBox";
+            this.txbSearchBox.Size = new System.Drawing.Size(183, 30);
+            this.txbSearchBox.TabIndex = 0;
+            // 
+            // txbIdMon
+            // 
+            this.txbIdMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbIdMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbIdMon.Location = new System.Drawing.Point(792, 116);
+            this.txbIdMon.Name = "txbIdMon";
+            this.txbIdMon.Size = new System.Drawing.Size(180, 30);
+            this.txbIdMon.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(691, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 29);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "ID Môn:";
+            // 
+            // txbDiemDat
+            // 
+            this.txbDiemDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbDiemDat.Location = new System.Drawing.Point(126, 179);
+            this.txbDiemDat.Name = "txbDiemDat";
+            this.txbDiemDat.Size = new System.Drawing.Size(180, 30);
+            this.txbDiemDat.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(6, 179);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 29);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Điểm đạt:";
+            // 
+            // txbTenMon
+            // 
+            this.txbTenMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbTenMon.Location = new System.Drawing.Point(126, 115);
+            this.txbTenMon.Name = "txbTenMon";
+            this.txbTenMon.Size = new System.Drawing.Size(180, 30);
+            this.txbTenMon.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(5, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 29);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tên môn:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // dtgvdanhsachmon
+            // 
+            this.dtgvdanhsachmon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvdanhsachmon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvdanhsachmon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgvdanhsachmon.Location = new System.Drawing.Point(3, 35);
+            this.dtgvdanhsachmon.Name = "dtgvdanhsachmon";
+            this.dtgvdanhsachmon.RowHeadersWidth = 62;
+            this.dtgvdanhsachmon.RowTemplate.Height = 28;
+            this.dtgvdanhsachmon.Size = new System.Drawing.Size(974, 250);
+            this.dtgvdanhsachmon.TabIndex = 0;
+            // 
+            // xuiCustomGroupbox1
+            // 
+            this.xuiCustomGroupbox1.BorderColor = System.Drawing.Color.Black;
+            this.xuiCustomGroupbox1.BorderWidth = 1;
+            this.xuiCustomGroupbox1.Controls.Add(this.dtgvdanhsachmon);
+            this.xuiCustomGroupbox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xuiCustomGroupbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.xuiCustomGroupbox1.Location = new System.Drawing.Point(67, 320);
+            this.xuiCustomGroupbox1.Name = "xuiCustomGroupbox1";
+            this.xuiCustomGroupbox1.ShowText = true;
+            this.xuiCustomGroupbox1.Size = new System.Drawing.Size(980, 288);
+            this.xuiCustomGroupbox1.TabIndex = 0;
+            this.xuiCustomGroupbox1.TabStop = false;
+            this.xuiCustomGroupbox1.Text = "Danh sách môn học";
+            this.xuiCustomGroupbox1.TextColor = System.Drawing.Color.Black;
             // 
             // fMonHoc
             // 
@@ -425,7 +426,9 @@
             this.Text = "fMonHoc";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.pnMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -434,8 +437,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvdanhsachmon)).EndInit();
             this.xuiCustomGroupbox1.ResumeLayout(false);
             this.xuiCustomGroupbox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }

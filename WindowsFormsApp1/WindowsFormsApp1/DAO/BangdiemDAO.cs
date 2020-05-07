@@ -27,17 +27,30 @@ namespace WindowsFormsApp1.DAO
         }
         private BangdiemDAO() { }
 
-        public List<Bangdiem> Loadlistbangdiem(int idmonhoc,int idlop)
+        public List<Bangdiem> Loadlistbangdiem()
         {
             List<Bangdiem> Listbangdiem = new List<Bangdiem>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("Diem1t,bd.HK,bd.Diemtbm from BangDiemMon as bd, DSHocSinh as hs where bd.idlop=" + idlop + " and bd.iDhocsinh=hs.iDhocsinh and bd.idmonhoc=" + idmonhoc + "");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT *FROM BangDiemMon");
             foreach(DataRow item in data.Rows)
             {
                 Bangdiem bangdiem = new Bangdiem(item);
                 Listbangdiem.Add(bangdiem);
             }
-
             return Listbangdiem;
+        }
+
+        public bool updateBangDiem(int idhocsinh, int idmon, float diem15p,float diem1t,float diemhk , int hocki)
+        {
+            string query = "UPDATE BangDiemMon SET idmonhoc = @idmonhoc , Diem15p = @Diem15p , Diem1t = @Diem1t , HK = @HK ,Hocki = @Hocki WHERE iDhocsinh = @iDhocsinh ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idmon, diem15p, diem1t, diemhk,hocki, idhocsinh});
+            return result > 0;
+        }
+
+        public bool insertBangDiem(int idhocsinh,int idmon, int idlop, float diem15p, float diem1t, float diemhk, int hocki)
+        {
+            string query = "exec USP_InsertBangDiem @idhocsinh , @idmonhoc , @idlop , @diem15p , @diem1t , @hk , @hocki ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh, idmon, idlop, diem15p, diem1t, diemhk, hocki });
+            return result > 0;
         }
     }
 }

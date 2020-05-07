@@ -18,26 +18,6 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
-        {
-            string userName = txtTaiKhoan.Text;
-            string passWord = txtMk.Text;
-            if (Login(userName, passWord))
-            {
-                fGrade grade = new fGrade();
-                this.Hide();
-                grade.ShowDialog();
-                
-            }
-            else
-            {
-                MessageBox.Show("sai ten tai khoan hoac mat khau!");
-            }
-            txtTaiKhoan.Text = "";
-            txtMk.Text = "";
-            txtTaiKhoan.Focus();
-        }
-
         bool Login(string userName,string passWord)
         {
 
@@ -47,6 +27,26 @@ namespace WindowsFormsApp1
         private void btnThoat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDangNhap_Click_1(object sender, EventArgs e)
+        {
+            string userName = txtTaiKhoan.Text;
+            string passWord = txtMk.Text;
+            if (Login(userName, passWord))
+            {
+                fBangDiem bangDiem = new fBangDiem();
+                this.Hide();
+                bangDiem.ShowDialog();
+
+            }
+            else
+            {
+                MessageBox.Show("sai ten tai khoan hoac mat khau!");
+            }
+            txtTaiKhoan.Text = "";
+            txtMk.Text = "";
+            txtTaiKhoan.Focus();
         }
     }
 }
