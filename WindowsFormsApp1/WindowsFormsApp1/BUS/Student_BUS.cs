@@ -23,7 +23,6 @@ namespace WindowsFormsApp1.BUS
             }
 
             private set => Student_BUS.Instance = value; 
-
         }
 
         public bool checkEmail( string email )

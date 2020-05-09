@@ -13,6 +13,7 @@ using WindowsFormsApp1.DTO;
 using System.Text.RegularExpressions;
 using WindowsFormsApp1.BUS;
 using System.Drawing.Design;
+using System.Data.SqlTypes;
 
 namespace WindowsFormsApp1
 {
@@ -53,8 +54,16 @@ namespace WindowsFormsApp1
             return true;
         }
 
+        public void enable_Button(bool a)
+        {
+            btnLuu.Enabled = a;
+            if (btnLuu.Enabled == false)
+            {
+                btnLuu.BackgroundColor = Color.White;
+            }
+            else btnLuu.BackgroundColor = Color.FromArgb(79, 79, 79);
+        }
 
-       
 
         BindingSource StudentList = new BindingSource();
         public fStudent()
@@ -67,9 +76,10 @@ namespace WindowsFormsApp1
             AddHsBinding();
             LoadDanhSachLop();
             groupBox1.Enabled = false;
-            btnLuu.Enabled = false;
+            enable_Button(false);
             btnLuuThemhs.Visible = false;
             btnHuy.Visible = false;
+       
         }
 
 
@@ -138,7 +148,8 @@ namespace WindowsFormsApp1
         private void btnSua_Click(object sender, EventArgs e)
         {
             groupBox1.Enabled = true;
-            btnLuu.Enabled = true;
+            enable_Button(true);
+            txbID.Visible = false;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -164,8 +175,9 @@ namespace WindowsFormsApp1
                     MessageBox.Show("có lỗi");
                 }
                 LoadDanhSachHs();
-                btnLuu.Enabled = false;
+                enable_Button(false);
                 groupBox1.Enabled = false;
+                txbID.Visible = true;
             }
         }
         public void clear()
@@ -229,6 +241,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Xóa thành công");
                 else MessageBox.Show("Có lỗi khi xóa");
             }
+            LoadDanhSachHs();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

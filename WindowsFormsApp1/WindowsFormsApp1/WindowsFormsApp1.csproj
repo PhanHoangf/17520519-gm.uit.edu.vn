@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -49,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS\BangDiem_BUS.cs" />
     <Compile Include="BUS\Student_BUS.cs" />
     <Compile Include="DAO\Account.cs" />
     <Compile Include="DAO\BangdiemDAO.cs" />
@@ -56,11 +60,13 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\StudentDAO.cs" />
     <Compile Include="DAO\SubjectDAO.cs" />
+    <Compile Include="DAO\TongKetMonDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\Bangdiem.cs" />
     <Compile Include="DTO\Classes.cs" />
     <Compile Include="DTO\Student.cs" />
     <Compile Include="DTO\Subjects.cs" />
+    <Compile Include="DTO\TongKetMon.cs" />
     <Compile Include="fAccountInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
     <Compile Include="fStudent.Designer.cs">
       <DependentUpon>fStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="fTongKetMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTongKetMon.Designer.cs">
+      <DependentUpon>fTongKetMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inserths.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fStudent.resx">
       <DependentUpon>fStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fTongKetMon.resx">
+      <DependentUpon>fTongKetMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inserths.resx">
       <DependentUpon>Inserths.cs</DependentUpon>

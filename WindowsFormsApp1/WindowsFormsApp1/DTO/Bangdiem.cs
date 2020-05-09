@@ -15,9 +15,11 @@ namespace WindowsFormsApp1.DTO
         private float diem1t;
         private float diemhocki;
         private float diemtbm;
+        private int hocki;
+        private string ghichu;
         private int sTT;
 
-        public Bangdiem(int stt,int idhocsinh,int idmonhoc,float diem15p,float diem1t,float diemhocki,float diemtbm)
+        public Bangdiem(int stt,int idhocsinh,int idmonhoc,float diem15p,float diem1t,float diemhocki,float diemtbm,int hocki,string ghichu)
         {
             this.STT = stt;
             this.IDhocsinh = idhocsinh;
@@ -26,6 +28,8 @@ namespace WindowsFormsApp1.DTO
             this.Diem1t = diem1t;
             this.Diemhocki = diemhocki;
             this.Diemtbm = diemtbm;
+            this.Hocki = hocki;
+            this.Ghichu = ghichu;
         }
 
         public Bangdiem(DataRow row)
@@ -37,6 +41,8 @@ namespace WindowsFormsApp1.DTO
             this.diem1t = (float)row["Diem1t"];
             this.Diemhocki = (float)row["HK"];
             this.Diemtbm = (float)row["Diemtbm"];
+            this.Hocki = (int)row["Hocki"];
+            this.Ghichu = row["Ghichu"].ToString();
         }
 
         public float Diem15p { get => diem15p; set => diem15p = value; }
@@ -46,5 +52,7 @@ namespace WindowsFormsApp1.DTO
         public int IDhocsinh { get => iDhocsinh; set => iDhocsinh = value; }
         public int IDdmonhoc { get => iDdmonhoc; set => iDdmonhoc = value; }
         public int STT { get => sTT; set => sTT = value; }
+        public int Hocki { get => hocki; set => hocki = value; }
+        public string Ghichu { get => ghichu; set => ghichu = value; }
     }
 }

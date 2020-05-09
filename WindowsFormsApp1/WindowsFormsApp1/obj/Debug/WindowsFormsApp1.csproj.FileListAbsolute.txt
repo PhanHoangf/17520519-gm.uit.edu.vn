@@ -28,3 +28,4 @@ D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fMonHoc.res
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\XanderUI.dll
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fBangDiem.resources
 D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CopyComplete
+D:\QLHS\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.fTongKetMon.resources

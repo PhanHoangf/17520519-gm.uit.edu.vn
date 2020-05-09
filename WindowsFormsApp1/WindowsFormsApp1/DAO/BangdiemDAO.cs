@@ -39,18 +39,25 @@ namespace WindowsFormsApp1.DAO
             return Listbangdiem;
         }
 
-        public bool updateBangDiem(int idhocsinh, int idmon, float diem15p,float diem1t,float diemhk , int hocki)
+        public bool updateBangDiem(int idhocsinh, int idmon, float? diem15p,float? diem1t,float? diemhk , int hocki,int diemdat)
         {
-            string query = "UPDATE BangDiemMon SET idmonhoc = @idmonhoc , Diem15p = @Diem15p , Diem1t = @Diem1t , HK = @HK ,Hocki = @Hocki WHERE iDhocsinh = @iDhocsinh ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idmon, diem15p, diem1t, diemhk,hocki, idhocsinh});
+            string query = "USP_Update @idhocsinh , @idmonhoc , @diem15p , @diem1t , @hk , @hocki , @diemdat ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh,idmon,diem15p,diem1t,diemhk,hocki,diemdat });
             return result > 0;
         }
 
-        public bool insertBangDiem(int idhocsinh,int idmon, int idlop, float diem15p, float diem1t, float diemhk, int hocki)
+        public bool insertBangDiem(int idhocsinh,int idmon, int idlop, float? diem15p, float? diem1t, float? diemhk, int hocki,int diemdat)
         {
-            string query = "exec USP_InsertBangDiem @idhocsinh , @idmonhoc , @idlop , @diem15p , @diem1t , @hk , @hocki ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh, idmon, idlop, diem15p, diem1t, diemhk, hocki });
+            string query = " USP_Insert @idhocsinh , @idmonhoc , @idlop , @diem15p , @diem1t , @hk , @hocki , @diemdat ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh, idmon, idlop, diem15p, diem1t, diemhk, hocki,diemdat });
             return result > 0;
         }
+        public bool deleteBangDiem(int idhocsinh)
+        {
+            string query = "DELETE FROM BangDiemMon WHERE iDhocsinh = " + idhocsinh + "";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh });
+            return result > 0;
+        }
+      
     }
 }
