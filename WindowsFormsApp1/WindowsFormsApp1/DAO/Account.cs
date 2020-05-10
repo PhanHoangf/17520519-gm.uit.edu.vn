@@ -33,10 +33,11 @@ namespace WindowsFormsApp1.DAO
             return result.Rows.Count > 0;
         }
 
-        public List<AccountDTO> loadDSAccount(string query)
+        public List<AccountDTO> loadDSAccount()
         {
             List<AccountDTO> AccountList = new List<AccountDTO>();
-            DataTable data = new DataTable();
+            string query = "select *from TK";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
                 AccountDTO account = new AccountDTO(item);
@@ -62,6 +63,12 @@ namespace WindowsFormsApp1.DAO
         {
             string query = "DELETE FROM TK WHERE Tentk = @Tentk ";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tentk });
+            return result > 0;
+        }
+        public bool changePassWord(string tentk,string mkhientai,string kiemtramk,string matkhaumoi)
+        {
+            string query = "USP_DoiMatKhau @tentaikhoan , @matkhauhientai , @checkmatkhauhientai , @matkhaumoi ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tentk, mkhientai, kiemtramk, matkhaumoi });
             return result > 0;
         }
     }

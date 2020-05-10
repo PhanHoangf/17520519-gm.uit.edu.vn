@@ -12,14 +12,14 @@ namespace WindowsFormsApp1.DTO
         private string tenTK;
         private string matKhau;
         private int quyen;
-        private int trangThai;
+        //private int trangThai;
 
         AccountDTO(string tentk, string matkhau, int quyen, int trangthai)
         {
             this.TenTK = tentk;
             this.MatKhau = matkhau;
             this.Quyen = quyen;
-            this.TrangThai = trangthai;
+            //this.TrangThai = trangthai;
         }
         
         public AccountDTO(DataRow row)
@@ -27,12 +27,12 @@ namespace WindowsFormsApp1.DTO
             this.tenTK = row["Tentk"].ToString();
             this.MatKhau = row["MatKhau"].ToString();
             this.Quyen = (int)row["Quyen"];
-            this.TrangThai = (int)row["TrangThai"];
+            //this.TrangThai = (int)row["TrangThai"];
         }
         
         public string TenTK { get => tenTK; set => tenTK = value; }
         public string MatKhau { get => matKhau; set => matKhau = value; }
         public int Quyen { get => quyen; set => quyen = value; }
-        public int TrangThai { get => trangThai; set => trangThai = value; }
+        //public int TrangThai { get => trangThai; set => trangThai = value; }
     }
 }

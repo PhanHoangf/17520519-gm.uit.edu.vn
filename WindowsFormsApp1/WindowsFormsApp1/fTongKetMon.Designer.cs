@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvTongKetMon = new System.Windows.Forms.DataGridView();
             this.xuiCustomGroupbox1 = new XanderUI.XUICustomGroupbox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnXem = new XanderUI.XUIButton();
-            this.btnXuatExcel = new XanderUI.XUIButton();
-            this.Lớp = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbDanhSachLop = new System.Windows.Forms.ComboBox();
-            this.cbDanhSachMon = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblSoDat = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblSoDat = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbDanhSachMon = new System.Windows.Forms.ComboBox();
+            this.cbDanhSachLop = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Lớp = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnXuatExcel = new XanderUI.XUIButton();
+            this.btnXem = new XanderUI.XUIButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTongKetMon)).BeginInit();
             this.xuiCustomGroupbox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -61,9 +61,9 @@
             this.dtgvTongKetMon.Location = new System.Drawing.Point(3, 31);
             this.dtgvTongKetMon.Name = "dtgvTongKetMon";
             this.dtgvTongKetMon.RowHeadersWidth = 62;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.dtgvTongKetMon.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dtgvTongKetMon.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvTongKetMon.RowTemplate.Height = 28;
             this.dtgvTongKetMon.Size = new System.Drawing.Size(1118, 340);
             this.dtgvTongKetMon.TabIndex = 0;
@@ -126,6 +126,86 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lựa chọn";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "1",
+            "2"});
+            this.comboBox1.Location = new System.Drawing.Point(701, 107);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(164, 33);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.Location = new System.Drawing.Point(584, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 29);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Học kì:";
+            // 
+            // lblSoDat
+            // 
+            this.lblSoDat.AutoSize = true;
+            this.lblSoDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblSoDat.Location = new System.Drawing.Point(355, 114);
+            this.lblSoDat.Name = "lblSoDat";
+            this.lblSoDat.Size = new System.Drawing.Size(64, 25);
+            this.lblSoDat.TabIndex = 5;
+            this.lblSoDat.Text = "label4";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(222, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(127, 29);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Số HS đạt:";
+            // 
+            // cbDanhSachMon
+            // 
+            this.cbDanhSachMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbDanhSachMon.FormattingEnabled = true;
+            this.cbDanhSachMon.Location = new System.Drawing.Point(701, 49);
+            this.cbDanhSachMon.Name = "cbDanhSachMon";
+            this.cbDanhSachMon.Size = new System.Drawing.Size(164, 33);
+            this.cbDanhSachMon.TabIndex = 3;
+            // 
+            // cbDanhSachLop
+            // 
+            this.cbDanhSachLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbDanhSachLop.FormattingEnabled = true;
+            this.cbDanhSachLop.Location = new System.Drawing.Point(288, 49);
+            this.cbDanhSachLop.Name = "cbDanhSachLop";
+            this.cbDanhSachLop.Size = new System.Drawing.Size(164, 33);
+            this.cbDanhSachLop.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(584, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 29);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Môn học:";
+            // 
+            // Lớp
+            // 
+            this.Lớp.AutoSize = true;
+            this.Lớp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Lớp.Location = new System.Drawing.Point(222, 53);
+            this.Lớp.Name = "Lớp";
+            this.Lớp.Size = new System.Drawing.Size(60, 29);
+            this.Lớp.TabIndex = 0;
+            this.Lớp.Text = "Lớp:";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnXuatExcel);
@@ -135,28 +215,6 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(20);
             this.panel2.Size = new System.Drawing.Size(235, 163);
             this.panel2.TabIndex = 4;
-            // 
-            // btnXem
-            // 
-            this.btnXem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(79)))), ((int)(((byte)(79)))));
-            this.btnXem.ButtonImage = null;
-            this.btnXem.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
-            this.btnXem.ButtonText = "Xem";
-            this.btnXem.ClickBackColor = System.Drawing.Color.Gray;
-            this.btnXem.ClickTextColor = System.Drawing.Color.Lime;
-            this.btnXem.CornerRadius = 5;
-            this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXem.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
-            this.btnXem.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnXem.HoverTextColor = System.Drawing.Color.LavenderBlush;
-            this.btnXem.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnXem.Location = new System.Drawing.Point(23, 23);
-            this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(189, 50);
-            this.btnXem.TabIndex = 13;
-            this.btnXem.TextColor = System.Drawing.Color.Lime;
-            this.btnXem.Vertical_Alignment = System.Drawing.StringAlignment.Center;
-            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // btnXuatExcel
             // 
@@ -179,85 +237,27 @@
             this.btnXuatExcel.TextColor = System.Drawing.Color.Lime;
             this.btnXuatExcel.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             // 
-            // Lớp
+            // btnXem
             // 
-            this.Lớp.AutoSize = true;
-            this.Lớp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Lớp.Location = new System.Drawing.Point(222, 53);
-            this.Lớp.Name = "Lớp";
-            this.Lớp.Size = new System.Drawing.Size(60, 29);
-            this.Lớp.TabIndex = 0;
-            this.Lớp.Text = "Lớp:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(584, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Môn học:";
-            // 
-            // cbDanhSachLop
-            // 
-            this.cbDanhSachLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbDanhSachLop.FormattingEnabled = true;
-            this.cbDanhSachLop.Location = new System.Drawing.Point(288, 49);
-            this.cbDanhSachLop.Name = "cbDanhSachLop";
-            this.cbDanhSachLop.Size = new System.Drawing.Size(164, 33);
-            this.cbDanhSachLop.TabIndex = 2;
-            // 
-            // cbDanhSachMon
-            // 
-            this.cbDanhSachMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbDanhSachMon.FormattingEnabled = true;
-            this.cbDanhSachMon.Location = new System.Drawing.Point(701, 49);
-            this.cbDanhSachMon.Name = "cbDanhSachMon";
-            this.cbDanhSachMon.Size = new System.Drawing.Size(164, 33);
-            this.cbDanhSachMon.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(222, 111);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 29);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Số HS đạt:";
-            // 
-            // lblSoDat
-            // 
-            this.lblSoDat.AutoSize = true;
-            this.lblSoDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblSoDat.Location = new System.Drawing.Point(355, 114);
-            this.lblSoDat.Name = "lblSoDat";
-            this.lblSoDat.Size = new System.Drawing.Size(64, 25);
-            this.lblSoDat.TabIndex = 5;
-            this.lblSoDat.Text = "label4";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(584, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 29);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Học kì:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "2"});
-            this.comboBox1.Location = new System.Drawing.Point(701, 107);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(164, 33);
-            this.comboBox1.TabIndex = 7;
+            this.btnXem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(79)))), ((int)(((byte)(79)))));
+            this.btnXem.ButtonImage = null;
+            this.btnXem.ButtonStyle = XanderUI.XUIButton.Style.MaterialRounded;
+            this.btnXem.ButtonText = "Xem";
+            this.btnXem.ClickBackColor = System.Drawing.Color.Gray;
+            this.btnXem.ClickTextColor = System.Drawing.Color.Lime;
+            this.btnXem.CornerRadius = 5;
+            this.btnXem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXem.Horizontal_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnXem.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnXem.HoverTextColor = System.Drawing.Color.LavenderBlush;
+            this.btnXem.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
+            this.btnXem.Location = new System.Drawing.Point(23, 23);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(189, 50);
+            this.btnXem.TabIndex = 13;
+            this.btnXem.TextColor = System.Drawing.Color.Lime;
+            this.btnXem.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
             // fTongKetMon
             // 

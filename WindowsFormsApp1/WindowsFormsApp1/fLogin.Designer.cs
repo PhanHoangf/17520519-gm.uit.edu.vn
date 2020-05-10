@@ -83,7 +83,7 @@
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(154, 30);
             this.txtTaiKhoan.TabIndex = 3;
-            this.txtTaiKhoan.Text = "admin";
+            this.txtTaiKhoan.Text = "User1";
             // 
             // txtMk
             // 
@@ -93,7 +93,7 @@
             this.txtMk.PasswordChar = '*';
             this.txtMk.Size = new System.Drawing.Size(154, 30);
             this.txtMk.TabIndex = 4;
-            this.txtMk.Text = "123456";
+            this.txtMk.Text = "789";
             // 
             // panel1
             // 

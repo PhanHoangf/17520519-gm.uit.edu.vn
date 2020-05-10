@@ -13,6 +13,10 @@ namespace WindowsFormsApp1
 {
     public partial class fLogin : Form
     {
+        private string Tentk;
+
+        public string Tentk1 { get => Tentk; set => Tentk = value; }
+
         public fLogin()
         {
             InitializeComponent();
@@ -35,7 +39,8 @@ namespace WindowsFormsApp1
             string passWord = txtMk.Text;
             if (Login(userName, passWord))
             {
-                fBangDiem bangDiem = new fBangDiem();
+                fDoiMatKhau bangDiem = new fDoiMatKhau();
+                bangDiem.GetTenTk = userName;
                 this.Hide();
                 bangDiem.ShowDialog();
 
