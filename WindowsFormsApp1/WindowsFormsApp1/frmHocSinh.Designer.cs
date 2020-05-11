@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class fStudent
+    partial class frmHocSinh
     {
         /// <summary>
         /// Required designer variable.

@@ -47,5 +47,12 @@ namespace WindowsFormsApp1.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { hoten, gioitinh, ngaysinh, diachi, email, iDhocsinh });
             return result > 0;
         }
+
+        public DataTable FindHocSinhByName(string ten)
+        {
+            string query = "EXEC USP_TimKiemHsByTen N'"+ten+"'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class fTongKetMon
+    partial class frmTongKetMon
     {
         /// <summary>
         /// Required designer variable.
@@ -259,7 +259,7 @@
             this.btnXem.Vertical_Alignment = System.Drawing.StringAlignment.Center;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
-            // fTongKetMon
+            // frmTongKetMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -269,7 +269,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.xuiCustomGroupbox1);
-            this.Name = "fTongKetMon";
+            this.Name = "frmTongKetMon";
             this.Text = "fTongKetMon";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTongKetMon)).EndInit();
             this.xuiCustomGroupbox1.ResumeLayout(false);

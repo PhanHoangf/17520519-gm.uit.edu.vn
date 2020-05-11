@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.BUS;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1
 {
-    public partial class fTongKetMon : Form
+    public partial class frmTongKetMon : Form
     {
-        public fTongKetMon()
+        public frmTongKetMon()
         {
             InitializeComponent();
             LoadTongKetMon();
@@ -82,7 +83,7 @@ namespace WindowsFormsApp1
         private void btnXem_Click(object sender, EventArgs e)
         {
             loadTongKetMonByID(findIdLop(cbDanhSachLop.Text),findIdMonHoc(cbDanhSachMon.Text));
-            int a = dtgvTongKetMon.RowCount -1;
+            int a = TongKetMonDAO.Instance.countHsDat(findIdMonHoc(cbDanhSachMon.Text), findIdLop(cbDanhSachLop.Text));
             lblSoDat.Text = a.ToString();
             lblSoDat.Visible = true;
         }

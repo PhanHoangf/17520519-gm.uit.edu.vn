@@ -12,10 +12,10 @@ using WindowsFormsApp1.DTO;
 
 namespace WindowsFormsApp1
 {
-    public partial class fDoiMatKhau : Form
+    public partial class frmDoiMatKhau : Form
     {
         private string getTenTk;
-        public fDoiMatKhau()
+        public frmDoiMatKhau()
         {
             InitializeComponent();
             

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class fGrade
+    partial class frmLopHoc
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fGrade));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLopHoc));
             this.lblDsKhoiLop = new System.Windows.Forms.Label();
             this.grBoxThongTinLop = new System.Windows.Forms.GroupBox();
             this.grBoxThemLop = new System.Windows.Forms.GroupBox();
@@ -47,9 +47,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.grBoxDsLop = new System.Windows.Forms.GroupBox();
             this.dtgvDanhSachLop = new System.Windows.Forms.DataGridView();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.imgbutton = new System.Windows.Forms.ImageList(this.components);
             this.btnLuu = new System.Windows.Forms.Button();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -250,19 +250,6 @@
             this.dtgvDanhSachLop.Size = new System.Drawing.Size(623, 514);
             this.dtgvDanhSachLop.TabIndex = 0;
             // 
-            // btnThoat
-            // 
-            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.delete;
-            this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThoat.Location = new System.Drawing.Point(954, 529);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(206, 102);
-            this.btnThoat.TabIndex = 6;
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // imgbutton
             // 
             this.imgbutton.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgbutton.ImageStream")));
@@ -283,6 +270,19 @@
             this.btnLuu.TabIndex = 7;
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThoat.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.delete;
+            this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThoat.Location = new System.Drawing.Point(954, 529);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(206, 102);
+            this.btnThoat.TabIndex = 6;
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnSua
             // 
@@ -345,7 +345,7 @@
             this.Controls.Add(this.lblDsKhoiLop);
             this.Name = "fGrade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmLOPHOC";
+            this.Text = "Quản Lí Lớp Học";
             this.grBoxThongTinLop.ResumeLayout(false);
             this.grBoxThongTinLop.PerformLayout();
             this.grBoxThemLop.ResumeLayout(false);

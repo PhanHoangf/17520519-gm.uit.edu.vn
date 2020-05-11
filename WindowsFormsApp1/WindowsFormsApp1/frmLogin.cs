@@ -11,13 +11,13 @@ using WindowsFormsApp1.DAO;
 
 namespace WindowsFormsApp1
 {
-    public partial class fLogin : Form
+    public partial class frmLogin : Form
     {
         private string Tentk;
 
         public string Tentk1 { get => Tentk; set => Tentk = value; }
 
-        public fLogin()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             string passWord = txtMk.Text;
             if (Login(userName, passWord))
             {
-                fDoiMatKhau bangDiem = new fDoiMatKhau();
+                frmDoiMatKhau bangDiem = new frmDoiMatKhau();
                 bangDiem.GetTenTk = userName;
                 this.Hide();
                 bangDiem.ShowDialog();

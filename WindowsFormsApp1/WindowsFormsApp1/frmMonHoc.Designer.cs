@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class fMonHoc
+    partial class frmMonHoc
     {
         /// <summary>
         /// Required designer variable.

@@ -59,9 +59,7 @@ CREATE TABLE DanhSachLop(
 	CONSTRAINT fk_DShocsinh FOREIGN KEY (iDhocsinh) REFERENCES DSHocSinh(iDhocsinh)
 )
 
-CREATE TABLE BangQuiDinh(
-	
-)
+
 
 INSERT INTO Lop(TenLop) values
 ('10A1'),
@@ -199,7 +197,7 @@ from BangDiemMon as bd
 full outer join  DSHocSinh as hs 
 on bd.iDhocsinh=hs.iDhocsinh
 
-select hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6 "Diemtbm" 
+select hs.Hoten,bd.Diem15p,bd.Diem1t,bd.HK,bd.Diemtbm
 from DSHocSinh as hs
 Left join BangDiemMon as bd
 on bd.iDhocsinh = hs.iDhocsinh
@@ -210,7 +208,7 @@ create proc USP_DanhSachBangDiemTheoLop
 @MaLop int
 AS
 BEGIN
-	select hs.iDhocsinh, hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6 "Diemtbm" 
+	select hs.iDhocsinh, hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,bd.Diemtbm,bd.Ghichu
 	from DSHocSinh as hs
 	Left join BangDiemMon as bd
 	on bd.iDhocsinh = hs.iDhocsinh
@@ -222,19 +220,36 @@ go
 create proc USP_DanhSachBangDiem 
 AS
 BEGIN
-	select hs.iDhocsinh, hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6 "Diemtbm" 
+	select hs.iDhocsinh, hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,bd.Diemtbm ,bd.Ghichu
 	from DSHocSinh as hs
 	Left join BangDiemMon as bd
 	on bd.iDhocsinh = hs.iDhocsinh
 END
 
-select hs.iDhocsinh, hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,(bd.Diem15p+bd.Diem1t*2+bd.HK*3)/6 "Diemtbm" 
+go
+
+alter proc USP_DanhSachBangDiemByMonHoc 
+@idmonhoc int,@hocki int, @iDlop int
+AS
+BEGIN
+	select hs.iDhocsinh, hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,bd.Diemtbm ,bd.Hocki,bd.Ghichu
+	from DSHocSinh as hs
+	Left join BangDiemMon as bd
+	on bd.iDhocsinh = hs.iDhocsinh and bd.idmonhoc=@idmonhoc and bd.Hocki=@hocki 
+	where hs.iDlop=@iDlop 
+End
+go
+
+exec USP_DanhSachBangDiemByMonHoc @idmonhoc , @hocki , @iDlop
+
+select hs.iDhocsinh, hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,bd.Diemtbm,bd.Hocki
 from DSHocSinh as hs
 Left join BangDiemMon as bd
 on bd.iDhocsinh = hs.iDhocsinh
-where hs.iDlop = 1
+where hs.iDlop = 1 and bd.idmonhoc=1 and bd.Hocki=1
 
-EXEC USP_DanhSachBangDiemTheoLop @MaLop = '1'
+
+EXEC USP_DanhSachBangDiemTheoLop @MaLop = 1
 
 EXEC USP_DanhSachBangDiem
 
@@ -256,3 +271,213 @@ INSERT INTO BangDiemMon (iDhocsinh,idmonhoc,idlop,Diem15p,Diem1t,HK) values
 (16,2,1,9,9,9.5)
 
 SELECT dshs.iDhocsinh, dshs.Hoten, l.Tenlop, dshs.Ngaysinh,dshs.Gioitinh,dshs.Diachi,dshs.Email,dshs.TBHKI,dshs.TBHKII FROM DSHocSinh as dshs,Lop as l where dshs.iDlop = l.iDlop and l.Tenlop = '11A3'
+
+
+select *from MonHoc
+select *from DSHocSinh
+UPDATE MonHoc SET DiemDat = 5.5 where iDmonhoc=1
+
+UPDATE BangDiemMon SET idmonhoc = 1 , Diem15p = 5 , Diem1t = 7 , HK = 6 ,Hocki = 1 WHERE iDhocsinh = 4
+
+go
+
+create proc USP_Insert
+@idhocsinh int,@idmonhoc int, @idlop int , @diem15p float, @diem1t float,@hk float,@hocki int,@diemdat int
+as
+begin
+	INSERT INTO BangDiemMon (iDhocsinh,idmonhoc,idlop,Diem15p,Diem1t,HK,Hocki) 
+	values (@idhocsinh,@idmonhoc,@idlop,@diem15p,@diem1t,@hk,@hocki)
+	update BangDiemMon 
+	set Diemtbm = (@diem15p+@diem1t*2+@hk*3)/6
+	where iDhocsinh=@idhocsinh
+
+	update BangDiemMon set Ghichu= N'Đạt' where Diemtbm > @diemdat
+
+	update BangDiemMon set Ghichu = N'Rớt'
+	where Diemtbm < @diemdat
+
+end
+
+go
+
+
+alter proc USP_Update
+@idhocsinh int, @idmonhoc int, @diem15p float,@diem1t float,@hk float,@hocki int,@diemdat int
+as
+begin
+	update BangDiemMon set Diem15p=@diem15p,Diem1t=@diem1t,HK=@hk,Hocki=@hocki
+	where iDhocsinh=@idhocsinh and idmonhoc=@idmonhoc
+
+	update BangDiemMon  set Diemtbm = (Diem15p + Diem1t * 2 + HK * 3) / 6
+	update BangDiemMon set Ghichu= N'Đạt' where Diemtbm > @diemdat and iDhocsinh=@idhocsinh
+	update BangDiemMon set Ghichu= N'Rớt' where Diemtbm < @diemdat and iDhocsinh=@idhocsinh
+end
+
+
+
+exec USP_Insert @idhocsinh=8,@idmonhoc=1,@idlop=3,@diem15p=7,@diem1t=7,@hk=8,@hocki=1
+
+exec USP_InsertBangDiem @idhocsinh=4,@idmonhoc=1,@idlop=4,@diem15p=6,@diem1t=7,@hk=8,@hocki=1
+
+exec USP_DanhSachBangDiem
+
+go
+
+select *from BangDiemMon
+
+go
+
+create proc USP_DanhSachDiemHienTai
+as
+begin
+	select hs.iDhocsinh,hs.Hoten,bd.idmonhoc,bd.Diem15p,bd.Diem1t,bd.HK,bd.Diemtbm,bd.Hocki,bd.Ghichu from BangDiemMon as  bd , DSHocSinh as hs
+	where bd.iDhocsinh=hs.iDhocsinh
+	order by iDhocsinh asc
+end
+
+exec USP_DanhSachDiemHienTai 
+
+
+select count(Diemtbm)
+from BangDiemMon
+where idmonhoc = 1 and idlop = 3 and Diemtbm >= 5
+
+Declare @soluongdat int
+
+
+Set @soluongdat = (select count(Diemtbm)
+					from BangDiemMon
+					where idmonhoc = 1 and idlop = 1 and Diemtbm >= 5)
+			select @soluongdat
+
+
+update BangDiemMon set Ghichu= N'Đạt' 
+where Diemtbm > 5
+select *from BangDiemMon
+
+
+update BangDiemMon set Ghichu = N'Rớt'
+where Diemtbm < 5
+
+--Set dữ liệu cho bảng tổng kết môn--
+
+
+CREATE TABLE TongKetMon(
+	[STT] int IDENTITY(1,1),
+	[ID Học Sinh] int,
+	[ID Lớp] int,
+	[ID môn học] int,
+	[Điểm tb môn] decimal(10,1),
+	[Ghi chú] nvarchar(50),
+	[Học kì] int 
+)
+update TongKetMon set [Học kì] = 1
+
+select hs.Hoten as [Họ tên],l.Tenlop as[Tên lớp] ,mh.Tenmon as [Tên môn] ,tkm.[Điểm tb môn],tkm.[Ghi chú],tkm.[Học kì] from TongKetMon as tkm,Lop as l,DSHocSinh as hs,MonHoc as mh 
+where [ID Lớp] = 1 and [ID môn học] = 2 and tkm.[ID Học Sinh] = hs.iDhocsinh and tkm.[ID Lớp] = l.iDlop and tkm.[ID môn học] = mh.iDmonhoc
+
+GO
+
+alter PROC USP_TongKetMon 
+@idlop int, @idmonhoc int
+AS
+BEGIN
+	select hs.Hoten as [Họ tên],l.Tenlop as[Tên lớp] ,mh.Tenmon as [Tên môn] ,tkm.[Điểm tb môn],tkm.[Ghi chú] ,tkm.[Học kì] from TongKetMon as tkm,Lop as l,DSHocSinh as hs,MonHoc as mh 
+	where [ID Lớp] = @idlop and [ID môn học] = @idmonhoc and tkm.[ID Học Sinh] = hs.iDhocsinh and tkm.[ID Lớp] = l.iDlop and tkm.[ID môn học] = mh.iDmonhoc
+
+END
+
+EXEC USP_TongKetMon 1,1
+
+go
+
+
+delete from TongKetMon where [ID Học Sinh]=35
+
+select COUNT(*) from TongKetMon where [Ghi chú] = N'Đạt' and [ID môn học] = 1 and [ID Lớp] = 1
+
+select COUNT(*) from TongKetMon where [Ghi chú] = N'Rớt' and [ID môn học]=1 and [ID Lớp]=1
+
+GO
+
+
+	
+END 
+
+INSERT INTO TongKetMon ([ID Học Sinh],[ID Lớp],[ID môn học],[Điểm tb môn],[Ghi chú],[Học kì])
+SELECT iDhocsinh,idlop,idmonhoc,Diemtbm,Ghichu,Hocki
+FROM BangDiemMon
+
+
+SELECT Tenlop
+FROM Lop
+
+drop table TongKetMon
+
+select *from BangDiemMon where idlop=1 and idmonhoc=1
+select *from MonHoc
+
+alter proc USP_Insert
+@idhocsinh int,@idmonhoc int, @idlop int , @diem15p float, @diem1t float,@hk float,@hocki int,@diemdat int
+as
+begin
+	INSERT INTO BangDiemMon (iDhocsinh,idmonhoc,idlop,Diem15p,Diem1t,HK,Hocki) 
+	values (@idhocsinh,@idmonhoc,@idlop,@diem15p,@diem1t,@hk,@hocki)
+	update BangDiemMon 
+	set Diemtbm = (@diem15p+@diem1t*2+@hk*3)/6
+	where iDhocsinh=@idhocsinh
+
+	update BangDiemMon set Ghichu= N'Đạt' where Diemtbm > @diemdat
+
+	update BangDiemMon set Ghichu = N'Rớt'
+	where Diemtbm < @diemdat
+
+	INSERT INTO TongKetMon ([ID Học Sinh],[ID môn học],[Điểm tb môn])
+	VALUES (@idhocsinh,@idmonhoc,@idlop)
+
+	update TongKetMon 
+	set [Điểm tb môn] = (@diem15p+@diem1t*2+@hk*3)/6
+	where [ID Học Sinh]=@idhocsinh
+
+	update TongKetMon
+	set [Ghi chú] = N'Đạt' where [Điểm tb môn] > @diemdat
+	update TongKetMon
+	set [Ghi chú] = N'Rớt' where [Điểm tb môn] < @diemdat
+	update TongKetMon
+	set [ID Lớp] = @idlop where [ID Học Sinh] = @idhocsinh
+	update TongKetMon
+	set [Học kì] = @hocki where [ID Học Sinh] = @idhocsinh
+ end
+
+ select *from TK
+ go
+
+create PROC USP_DoiMatKhau
+ @tentaikhoan nvarchar(30), @matkhauhientai nvarchar(30) , @checkmatkhauhientai nvarchar(30) ,@matkhaumoi nvarchar(30) 
+ AS
+ BEGIN
+	 IF( @matkhauhientai = @checkmatkhauhientai )
+	 UPDATE TK SET MatKhau = @matkhaumoi WHERE Tentk=@tentaikhoan
+	 ELSE
+	 PRINT N'Wrong Password!'
+ END
+
+ EXEC USP_DoiMatKhau User1,'abcd','abcd','123'
+
+ ALTER TABLE TongKetMon
+ ADD CONSTRAINT fk_IDhocsinh_tkm FOREIGN KEY ([ID học sinh]) REFERENCES DSHocSinh (iDhocsinh) ON DELETE CASCADE
+
+  ALTER TABLE BangDiemMon
+ ADD CONSTRAINT fk_IDhocsinh_BangDiemMon FOREIGN KEY (iDhocsinh) REFERENCES DSHocSinh (iDhocsinh) ON DELETE CASCADE
+
+ go
+
+CREATE PROC USP_TimKiemHsByTen
+@tenhocsinh nvarchar(50)
+AS
+BEGIN
+	SELECT hs.Hoten,l.Tenlop,hs.Gioitinh,hs.Ngaysinh,hs.Diachi,hs.Email,hs.TBHKI,hs.TBHKII FROM DSHocSinh AS hs , Lop AS l
+	WHERE hs.iDlop= l.iDlop AND hs.Hoten LIKE N'%'+@tenhocsinh+'%'
+END
+
+EXEC USP_TimKiemHsByTen N'a' 

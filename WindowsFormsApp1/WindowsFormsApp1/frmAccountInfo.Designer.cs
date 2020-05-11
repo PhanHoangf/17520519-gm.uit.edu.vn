@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class fAccountInfo
+    partial class frmAccountInfo
     {
         /// <summary>
         /// Required designer variable.

@@ -52,5 +52,13 @@ namespace WindowsFormsApp1.DAO
             data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
+
+        public int countHsDat(int idmon, int idlop)
+        {
+            string query = "select COUNT(*) from TongKetMon where [Ghi chú] = N'Đạt' and [ID môn học] = " + idmon + " and [ID Lớp] = " + idlop + " ";
+            object a = DataProvider.Instance.ExecuteScalar(query);
+            int b = (int)a;
+            return b;
+        }
     }
 }

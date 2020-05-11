@@ -12,9 +12,9 @@ using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 namespace WindowsFormsApp1
 {
-    public partial class fGrade : Form
+    public partial class frmLopHoc : Form
     {
-        public fGrade()
+        public frmLopHoc()
         {
             InitializeComponent();
             loadClasslist();
@@ -89,7 +89,7 @@ namespace WindowsFormsApp1
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            fGrade fGrade = new fGrade();
+            frmLopHoc fGrade = new frmLopHoc();
             fGrade.Close();
         }
 

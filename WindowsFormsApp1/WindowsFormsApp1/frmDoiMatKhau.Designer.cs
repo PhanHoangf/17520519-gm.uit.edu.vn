@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class fDoiMatKhau
+    partial class frmDoiMatKhau
     {
         /// <summary>
         /// Required designer variable.

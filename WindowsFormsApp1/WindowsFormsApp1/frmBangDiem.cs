@@ -15,10 +15,10 @@ using App = Microsoft.Office.Interop.Excel.Application;
 
 namespace WindowsFormsApp1
 {
-    public partial class fBangDiem : Form
+    public partial class frmBangDiem : Form
     {
         BindingSource ListBangDiem = new BindingSource();
-        public fBangDiem()
+        public frmBangDiem()
         {
             InitializeComponent();
             dtgvDanhSachDiem.DataSource = ListBangDiem;

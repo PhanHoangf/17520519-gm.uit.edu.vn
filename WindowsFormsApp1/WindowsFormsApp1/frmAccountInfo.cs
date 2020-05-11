@@ -11,11 +11,11 @@ using WindowsFormsApp1.DAO;
 
 namespace WindowsFormsApp1
 {
-    public partial class fAccountInfo : Form
+    public partial class frmAccountInfo : Form
     {
             bool check = false;
             BindingSource AccountList = new BindingSource();
-            public fAccountInfo()
+            public frmAccountInfo()
             {
                     InitializeComponent();
                     dtgvDanhSachTK.DataSource = AccountList;

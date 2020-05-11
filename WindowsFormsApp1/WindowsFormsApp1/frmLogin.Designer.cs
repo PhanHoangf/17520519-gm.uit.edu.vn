@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class fLogin
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.

@@ -11,11 +11,11 @@ using WindowsFormsApp1.DAO;
 
 namespace WindowsFormsApp1
 {
-    public partial class fMonHoc : Form
+    public partial class frmMonHoc : Form
     {
         BindingSource SubjectList = new BindingSource();
         bool flag;
-        public fMonHoc()
+        public frmMonHoc()
         {
             InitializeComponent();
             dtgvdanhsachmon.DataSource = SubjectList;

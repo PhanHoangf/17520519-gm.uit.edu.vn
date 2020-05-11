@@ -17,7 +17,7 @@ using System.Data.SqlTypes;
 
 namespace WindowsFormsApp1
 {
-    public partial class fStudent : Form
+    public partial class frmHocSinh : Form
     {
         //Kiểm tra giá trị đầu vào
         public bool check(string hoten, string gioitinh, int namsinh, string diachi, string email)
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
 
 
         BindingSource StudentList = new BindingSource();
-        public fStudent()
+        public frmHocSinh()
         {
 
             InitializeComponent();
