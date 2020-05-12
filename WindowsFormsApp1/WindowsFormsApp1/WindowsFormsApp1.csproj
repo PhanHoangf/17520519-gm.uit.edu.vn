@@ -61,6 +61,7 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\StudentDAO.cs" />
     <Compile Include="DAO\SubjectDAO.cs" />
+    <Compile Include="DAO\TongKetHocKiDAO.cs" />
     <Compile Include="DAO\TongKetMonDAO.cs" />
     <Compile Include="DTO\AccountDTO.cs" />
     <Compile Include="DTO\Bangdiem.cs" />

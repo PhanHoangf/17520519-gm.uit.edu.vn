@@ -52,12 +52,14 @@ namespace WindowsFormsApp1.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh, idmon, idlop, diem15p, diem1t, diemhk, hocki,diemdat });
             return result > 0;
         }
+
         public bool deleteBangDiem(int idhocsinh)
         {
             string query = "DELETE FROM BangDiemMon WHERE iDhocsinh = " + idhocsinh + "";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh });
             return result > 0;
         }
+
       
     }
 }
