@@ -123,6 +123,12 @@
     <Compile Include="frmHocSinh.Designer.cs">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTongKetHocKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTongKetHocKi.Designer.cs">
+      <DependentUpon>frmTongKetHocKi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTongKetMon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHocSinh.resx">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTongKetHocKi.resx">
+      <DependentUpon>frmTongKetHocKi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTongKetMon.resx">
       <DependentUpon>frmTongKetMon.cs</DependentUpon>
@@ -250,6 +259,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loginicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

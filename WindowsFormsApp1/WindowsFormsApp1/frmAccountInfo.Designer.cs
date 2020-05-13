@@ -28,19 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAccountInfo));
             this.pnMenu = new System.Windows.Forms.Panel();
+            this.btnMenu2 = new System.Windows.Forms.PictureBox();
+            this.btnMenu = new System.Windows.Forms.PictureBox();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.BtnXoa = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblMenu = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dtgvDanhSachTK = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.grbAccountInfo = new System.Windows.Forms.GroupBox();
+            this.txbXacNhanMK = new System.Windows.Forms.TextBox();
+            this.lblxacnhan = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,21 +57,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txbTenTaiKhoan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblxacnhan = new System.Windows.Forms.Label();
-            this.txbXacNhanMK = new System.Windows.Forms.TextBox();
-            this.btnMenu2 = new System.Windows.Forms.PictureBox();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachTK)).BeginInit();
             this.panel4.SuspendLayout();
             this.grbAccountInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnMenu
@@ -84,6 +85,30 @@
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(244, 524);
             this.pnMenu.TabIndex = 0;
+            // 
+            // btnMenu2
+            // 
+            this.btnMenu2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.menu;
+            this.btnMenu2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMenu2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenu2.Location = new System.Drawing.Point(0, 0);
+            this.btnMenu2.Name = "btnMenu2";
+            this.btnMenu2.Size = new System.Drawing.Size(244, 31);
+            this.btnMenu2.TabIndex = 7;
+            this.btnMenu2.TabStop = false;
+            this.btnMenu2.Click += new System.EventHandler(this.btnMenu2_Click);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenu.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.menu;
+            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMenu.Location = new System.Drawing.Point(191, 6);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Size = new System.Drawing.Size(47, 31);
+            this.btnMenu.TabIndex = 1;
+            this.btnMenu.TabStop = false;
+            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // btnLuu
             // 
@@ -176,6 +201,18 @@
             this.panel2.Size = new System.Drawing.Size(1140, 86);
             this.panel2.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.user;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(284, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 40);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -260,6 +297,28 @@
             this.grbAccountInfo.TabIndex = 0;
             this.grbAccountInfo.TabStop = false;
             this.grbAccountInfo.Text = "Thông tin tài khoản";
+            // 
+            // txbXacNhanMK
+            // 
+            this.txbXacNhanMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txbXacNhanMK.Location = new System.Drawing.Point(221, 237);
+            this.txbXacNhanMK.Name = "txbXacNhanMK";
+            this.txbXacNhanMK.PasswordChar = '*';
+            this.txbXacNhanMK.Size = new System.Drawing.Size(180, 30);
+            this.txbXacNhanMK.TabIndex = 11;
+            this.txbXacNhanMK.Visible = false;
+            // 
+            // lblxacnhan
+            // 
+            this.lblxacnhan.AutoSize = true;
+            this.lblxacnhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblxacnhan.ForeColor = System.Drawing.Color.Black;
+            this.lblxacnhan.Location = new System.Drawing.Point(37, 238);
+            this.lblxacnhan.Name = "lblxacnhan";
+            this.lblxacnhan.Size = new System.Drawing.Size(157, 29);
+            this.lblxacnhan.TabIndex = 10;
+            this.lblxacnhan.Text = "Xác nhận mk:";
+            this.lblxacnhan.Visible = false;
             // 
             // label8
             // 
@@ -363,65 +422,7 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Tên Tài Khoản:";
             // 
-            // lblxacnhan
-            // 
-            this.lblxacnhan.AutoSize = true;
-            this.lblxacnhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblxacnhan.ForeColor = System.Drawing.Color.Black;
-            this.lblxacnhan.Location = new System.Drawing.Point(37, 238);
-            this.lblxacnhan.Name = "lblxacnhan";
-            this.lblxacnhan.Size = new System.Drawing.Size(157, 29);
-            this.lblxacnhan.TabIndex = 10;
-            this.lblxacnhan.Text = "Xác nhận mk:";
-            this.lblxacnhan.Visible = false;
-            // 
-            // txbXacNhanMK
-            // 
-            this.txbXacNhanMK.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbXacNhanMK.Location = new System.Drawing.Point(221, 237);
-            this.txbXacNhanMK.Name = "txbXacNhanMK";
-            this.txbXacNhanMK.PasswordChar = '*';
-            this.txbXacNhanMK.Size = new System.Drawing.Size(180, 30);
-            this.txbXacNhanMK.TabIndex = 11;
-            this.txbXacNhanMK.Visible = false;
-            // 
-            // btnMenu2
-            // 
-            this.btnMenu2.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.menu;
-            this.btnMenu2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMenu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMenu2.Location = new System.Drawing.Point(0, 0);
-            this.btnMenu2.Name = "btnMenu2";
-            this.btnMenu2.Size = new System.Drawing.Size(244, 31);
-            this.btnMenu2.TabIndex = 7;
-            this.btnMenu2.TabStop = false;
-            this.btnMenu2.Click += new System.EventHandler(this.btnMenu2_Click);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMenu.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.menu;
-            this.btnMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMenu.Location = new System.Drawing.Point(191, 6);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(47, 31);
-            this.btnMenu.TabIndex = 1;
-            this.btnMenu.TabStop = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.user;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.user;
-            this.pictureBox1.Location = new System.Drawing.Point(284, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(63, 40);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // fAccountInfo
+            // frmAccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -431,21 +432,22 @@
             this.Controls.Add(this.pnMenu);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Name = "fAccountInfo";
-            this.Text = "frmAccountInfo";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmAccountInfo";
+            this.Text = "Quản Lí Tài Khoản";
             this.pnMenu.ResumeLayout(false);
             this.pnMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDanhSachTK)).EndInit();
             this.panel4.ResumeLayout(false);
             this.grbAccountInfo.ResumeLayout(false);
             this.grbAccountInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -19,7 +19,6 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             LoadTongKetMon();
-            xuiCustomGroupbox1.Enabled = false;
             LoadDanhSachLop();
             LoadDanhSachMonHoc();
             lblSoDat.Visible = false;
@@ -80,20 +79,16 @@ namespace WindowsFormsApp1
             return -1;
         }
 
-        public void loadPhieuTongKet(int lop,int hocki)
-        {
-            dtgvTongKetMon.DataSource = TongKetHocKiDAO.Instance.loadTongKetHocKi(lop, hocki);
-        }
+        
 
         private void btnXem_Click(object sender, EventArgs e)
         {
-            //loadTongKetMonByID(findIdLop(cbDanhSachLop.Text), findIdMonHoc(cbDanhSachMon.Text));
-            //int a = TongKetMonDAO.Instance.countHsDat(findIdMonHoc(cbDanhSachMon.Text), findIdLop(cbDanhSachLop.Text));
-            //lblSoDat.Text = a.ToString();
-            //lblSoDat.Visible = true;
             try
             {
-                loadPhieuTongKet(findIdLop(cbDanhSachLop.Text), Convert.ToInt32(cbHocKi.Text));
+                loadTongKetMonByID(findIdLop(cbDanhSachLop.Text), findIdMonHoc(cbDanhSachMon.Text));
+                int a = TongKetMonDAO.Instance.countHsDat(findIdMonHoc(cbDanhSachMon.Text), findIdLop(cbDanhSachLop.Text));
+                lblSoDat.Text = a.ToString();
+                lblSoDat.Visible = true;
             }
             catch { }
         }

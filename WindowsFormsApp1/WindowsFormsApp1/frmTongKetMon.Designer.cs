@@ -60,12 +60,13 @@
             this.dtgvTongKetMon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvTongKetMon.Location = new System.Drawing.Point(3, 31);
             this.dtgvTongKetMon.Name = "dtgvTongKetMon";
+            this.dtgvTongKetMon.ReadOnly = true;
             this.dtgvTongKetMon.RowHeadersWidth = 62;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dtgvTongKetMon.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvTongKetMon.RowTemplate.Height = 28;
-            this.dtgvTongKetMon.Size = new System.Drawing.Size(1118, 340);
+            this.dtgvTongKetMon.Size = new System.Drawing.Size(1118, 466);
             this.dtgvTongKetMon.TabIndex = 0;
             // 
             // xuiCustomGroupbox1
@@ -81,7 +82,7 @@
             this.xuiCustomGroupbox1.Location = new System.Drawing.Point(13, 245);
             this.xuiCustomGroupbox1.Name = "xuiCustomGroupbox1";
             this.xuiCustomGroupbox1.ShowText = true;
-            this.xuiCustomGroupbox1.Size = new System.Drawing.Size(1124, 374);
+            this.xuiCustomGroupbox1.Size = new System.Drawing.Size(1124, 500);
             this.xuiCustomGroupbox1.TabIndex = 1;
             this.xuiCustomGroupbox1.TabStop = false;
             this.xuiCustomGroupbox1.Text = "xuiCustomGroupbox1";
@@ -264,7 +265,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1149, 619);
+            this.ClientSize = new System.Drawing.Size(1149, 745);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
