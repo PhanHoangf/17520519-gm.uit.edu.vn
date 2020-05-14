@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.DTO;
@@ -24,11 +25,27 @@ namespace WindowsFormsApp1.DAO
         }
         private Account() { }
 
+        public string encoding(string passWord)
+        {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(passWord);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hasPass = "";
+            foreach (byte item in hasData)
+            {
+                hasPass += item;
+            }
+            return hasPass;
+        }
+
         public bool Login(string userName,string passWord)
         {
+
+            string hasPass = encoding(passWord);
+
             string query = "USP_Login @userName , @passWord";
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query,new object[] {userName,passWord});
+            DataTable result = DataProvider.Instance.ExecuteQuery(query,new object[] {userName,hasPass});
 
             return result.Rows.Count > 0;
         }
@@ -48,8 +65,9 @@ namespace WindowsFormsApp1.DAO
 
         public bool insertTaiKhoan(string tentk, string matkhau, int quyen)
         {
+            string hasPass = encoding(matkhau);
             string query = "INSERT INTO TK (Tentk, MatKhau, Quyen) VALUES ( @Tentk , @MatKhau , @Quyen ) ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tentk, matkhau, quyen });
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tentk, hasPass, quyen });
             return result > 0;
         }
 

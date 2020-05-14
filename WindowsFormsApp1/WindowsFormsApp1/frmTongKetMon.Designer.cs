@@ -58,7 +58,8 @@
             this.dtgvTongKetMon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvTongKetMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvTongKetMon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvTongKetMon.Location = new System.Drawing.Point(3, 31);
+            this.dtgvTongKetMon.Location = new System.Drawing.Point(2, 21);
+            this.dtgvTongKetMon.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvTongKetMon.Name = "dtgvTongKetMon";
             this.dtgvTongKetMon.ReadOnly = true;
             this.dtgvTongKetMon.RowHeadersWidth = 62;
@@ -66,8 +67,9 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dtgvTongKetMon.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvTongKetMon.RowTemplate.Height = 28;
-            this.dtgvTongKetMon.Size = new System.Drawing.Size(1118, 466);
+            this.dtgvTongKetMon.Size = new System.Drawing.Size(745, 296);
             this.dtgvTongKetMon.TabIndex = 0;
+            this.dtgvTongKetMon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTongKetMon_CellContentClick);
             // 
             // xuiCustomGroupbox1
             // 
@@ -79,10 +81,12 @@
             this.xuiCustomGroupbox1.Controls.Add(this.dtgvTongKetMon);
             this.xuiCustomGroupbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.xuiCustomGroupbox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.xuiCustomGroupbox1.Location = new System.Drawing.Point(13, 245);
+            this.xuiCustomGroupbox1.Location = new System.Drawing.Point(9, 168);
+            this.xuiCustomGroupbox1.Margin = new System.Windows.Forms.Padding(2);
             this.xuiCustomGroupbox1.Name = "xuiCustomGroupbox1";
+            this.xuiCustomGroupbox1.Padding = new System.Windows.Forms.Padding(2);
             this.xuiCustomGroupbox1.ShowText = true;
-            this.xuiCustomGroupbox1.Size = new System.Drawing.Size(1124, 500);
+            this.xuiCustomGroupbox1.Size = new System.Drawing.Size(749, 319);
             this.xuiCustomGroupbox1.TabIndex = 1;
             this.xuiCustomGroupbox1.TabStop = false;
             this.xuiCustomGroupbox1.Text = "xuiCustomGroupbox1";
@@ -93,8 +97,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1149, 70);
+            this.panel1.Size = new System.Drawing.Size(766, 45);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -102,9 +107,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.label1.Location = new System.Drawing.Point(313, 9);
+            this.label1.Location = new System.Drawing.Point(209, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(518, 40);
+            this.label1.Size = new System.Drawing.Size(354, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "BẢNG TỔNG KẾT MÔN HỌC";
             // 
@@ -120,9 +126,11 @@
             this.groupBox1.Controls.Add(this.Lớp);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.groupBox1.Location = new System.Drawing.Point(254, 76);
+            this.groupBox1.Location = new System.Drawing.Point(169, 49);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(883, 163);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(589, 106);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lựa chọn";
@@ -134,18 +142,20 @@
             this.cbHocKi.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.cbHocKi.Location = new System.Drawing.Point(701, 107);
+            this.cbHocKi.Location = new System.Drawing.Point(467, 70);
+            this.cbHocKi.Margin = new System.Windows.Forms.Padding(2);
             this.cbHocKi.Name = "cbHocKi";
-            this.cbHocKi.Size = new System.Drawing.Size(164, 33);
+            this.cbHocKi.Size = new System.Drawing.Size(111, 24);
             this.cbHocKi.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(584, 110);
+            this.label4.Location = new System.Drawing.Point(389, 71);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 29);
+            this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Học kì:";
             // 
@@ -153,9 +163,10 @@
             // 
             this.lblSoDat.AutoSize = true;
             this.lblSoDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblSoDat.Location = new System.Drawing.Point(355, 114);
+            this.lblSoDat.Location = new System.Drawing.Point(237, 74);
+            this.lblSoDat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSoDat.Name = "lblSoDat";
-            this.lblSoDat.Size = new System.Drawing.Size(64, 25);
+            this.lblSoDat.Size = new System.Drawing.Size(46, 17);
             this.lblSoDat.TabIndex = 5;
             this.lblSoDat.Text = "label4";
             // 
@@ -163,9 +174,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(222, 111);
+            this.label3.Location = new System.Drawing.Point(148, 72);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 29);
+            this.label3.Size = new System.Drawing.Size(87, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Số HS đạt:";
             // 
@@ -173,27 +185,30 @@
             // 
             this.cbDanhSachMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbDanhSachMon.FormattingEnabled = true;
-            this.cbDanhSachMon.Location = new System.Drawing.Point(701, 49);
+            this.cbDanhSachMon.Location = new System.Drawing.Point(467, 32);
+            this.cbDanhSachMon.Margin = new System.Windows.Forms.Padding(2);
             this.cbDanhSachMon.Name = "cbDanhSachMon";
-            this.cbDanhSachMon.Size = new System.Drawing.Size(164, 33);
+            this.cbDanhSachMon.Size = new System.Drawing.Size(111, 24);
             this.cbDanhSachMon.TabIndex = 3;
             // 
             // cbDanhSachLop
             // 
             this.cbDanhSachLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbDanhSachLop.FormattingEnabled = true;
-            this.cbDanhSachLop.Location = new System.Drawing.Point(288, 49);
+            this.cbDanhSachLop.Location = new System.Drawing.Point(192, 32);
+            this.cbDanhSachLop.Margin = new System.Windows.Forms.Padding(2);
             this.cbDanhSachLop.Name = "cbDanhSachLop";
-            this.cbDanhSachLop.Size = new System.Drawing.Size(164, 33);
+            this.cbDanhSachLop.Size = new System.Drawing.Size(111, 24);
             this.cbDanhSachLop.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(584, 53);
+            this.label2.Location = new System.Drawing.Point(389, 34);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 29);
+            this.label2.Size = new System.Drawing.Size(74, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Môn học:";
             // 
@@ -201,9 +216,10 @@
             // 
             this.Lớp.AutoSize = true;
             this.Lớp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Lớp.Location = new System.Drawing.Point(222, 53);
+            this.Lớp.Location = new System.Drawing.Point(148, 34);
+            this.Lớp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lớp.Name = "Lớp";
-            this.Lớp.Size = new System.Drawing.Size(60, 29);
+            this.Lớp.Size = new System.Drawing.Size(40, 20);
             this.Lớp.TabIndex = 0;
             this.Lớp.Text = "Lớp:";
             // 
@@ -211,10 +227,11 @@
             // 
             this.panel2.Controls.Add(this.btnXuatExcel);
             this.panel2.Controls.Add(this.btnXem);
-            this.panel2.Location = new System.Drawing.Point(13, 76);
+            this.panel2.Location = new System.Drawing.Point(9, 49);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(20);
-            this.panel2.Size = new System.Drawing.Size(235, 163);
+            this.panel2.Padding = new System.Windows.Forms.Padding(13);
+            this.panel2.Size = new System.Drawing.Size(157, 106);
             this.panel2.TabIndex = 4;
             // 
             // btnXuatExcel
@@ -231,12 +248,14 @@
             this.btnXuatExcel.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnXuatExcel.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnXuatExcel.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnXuatExcel.Location = new System.Drawing.Point(23, 90);
+            this.btnXuatExcel.Location = new System.Drawing.Point(15, 58);
+            this.btnXuatExcel.Margin = new System.Windows.Forms.Padding(2);
             this.btnXuatExcel.Name = "btnXuatExcel";
-            this.btnXuatExcel.Size = new System.Drawing.Size(189, 50);
+            this.btnXuatExcel.Size = new System.Drawing.Size(126, 32);
             this.btnXuatExcel.TabIndex = 14;
             this.btnXuatExcel.TextColor = System.Drawing.Color.Lime;
             this.btnXuatExcel.Vertical_Alignment = System.Drawing.StringAlignment.Center;
+            this.btnXuatExcel.Click += new System.EventHandler(this.btnXuatExcel_Click);
             // 
             // btnXem
             // 
@@ -252,9 +271,10 @@
             this.btnXem.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnXem.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnXem.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnXem.Location = new System.Drawing.Point(23, 23);
+            this.btnXem.Location = new System.Drawing.Point(15, 15);
+            this.btnXem.Margin = new System.Windows.Forms.Padding(2);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(189, 50);
+            this.btnXem.Size = new System.Drawing.Size(126, 32);
             this.btnXem.TabIndex = 13;
             this.btnXem.TextColor = System.Drawing.Color.Lime;
             this.btnXem.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -262,14 +282,15 @@
             // 
             // frmTongKetMon
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1149, 745);
+            this.ClientSize = new System.Drawing.Size(766, 498);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.xuiCustomGroupbox1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmTongKetMon";
             this.Text = "fTongKetMon";
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTongKetMon)).EndInit();

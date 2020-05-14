@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WindowsFormsApp1.BUS;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
+using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace WindowsFormsApp1
 {
@@ -91,6 +92,54 @@ namespace WindowsFormsApp1
                 lblSoDat.Visible = true;
             }
             catch { }
+        }
+
+        private void dtgvTongKetMon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnXuatExcel_Click(object sender, EventArgs e)
+        {
+            if(dtgvTongKetMon.Rows.Count > 0)
+            {
+                Application xcelApp = new Application();
+
+                xcelApp.Workbooks.Add(Type.Missing);
+                xcelApp.Cells[1, 2] = "BẢNG TÔNG KẾT MÔN HỌC";
+                xcelApp.Cells[3, 2] = "Lớp: "+cbDanhSachLop.Text;
+                xcelApp.Cells[4, 2] = "Môn học: "+cbDanhSachMon.Text;
+                xcelApp.Cells[5, 2] = "Học kì: " + cbHocKi.Text;
+
+                for(int i = 1; i < dtgvTongKetMon.Columns.Count + 1; i++)
+                {
+                    xcelApp.Cells[8, i + 1] = dtgvTongKetMon.Columns[i - 1].HeaderText;
+                }
+                for(int i = 0; i < dtgvTongKetMon.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dtgvTongKetMon.Columns.Count; j++)
+                    {
+                        xcelApp.Cells[i + 9, j + 2] = dtgvTongKetMon.Rows[i].Cells[j].Value;
+                    }
+                }
+                xcelApp.Columns.AutoFit();
+                xcelApp.Visible = true;
+                //Định dạng font chữ
+                xcelApp.Range["A1", "G100"].Font.Name = "Time New Roman";
+                xcelApp.Range["B1"].Font.Bold = true;
+                xcelApp.Range["B1"].Font.Size = 20;
+                xcelApp.Range["B3", "B5"].Font.Size = 15;
+                xcelApp.Range["A8", "G8"].Font.Bold = true;
+                xcelApp.Range["A8", "G100"].Font.Size = 13;
+                //Định dạng dòng text
+                xcelApp.Range["C9", "G100"].HorizontalAlignment = 3;
+                xcelApp.Range["C8", "G8"].ColumnWidth = 9;
+                xcelApp.Range["B1", "E1"].MergeCells = true;
+                xcelApp.Range["E8"].ColumnWidth = 13.45;
+                //kẻ bảng
+                xcelApp.Range["B8", "G" + (dtgvTongKetMon.Rows.Count + 7)].Borders.LineStyle = 1;
+
+            }
         }
     }
 }

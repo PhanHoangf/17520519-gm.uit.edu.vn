@@ -44,9 +44,9 @@
             this.lbDangNhap.AutoSize = true;
             this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbDangNhap.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbDangNhap.Location = new System.Drawing.Point(101, 15);
+            this.lbDangNhap.Location = new System.Drawing.Point(110, 15);
             this.lbDangNhap.Name = "lbDangNhap";
-            this.lbDangNhap.Size = new System.Drawing.Size(268, 46);
+            this.lbDangNhap.Size = new System.Drawing.Size(185, 31);
             this.lbDangNhap.TabIndex = 0;
             this.lbDangNhap.Text = "ĐĂNG NHẬP";
             this.lbDangNhap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -59,7 +59,7 @@
             this.lblTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lblTaiKhoan.Location = new System.Drawing.Point(72, 82);
             this.lblTaiKhoan.Name = "lblTaiKhoan";
-            this.lblTaiKhoan.Size = new System.Drawing.Size(125, 29);
+            this.lblTaiKhoan.Size = new System.Drawing.Size(82, 20);
             this.lblTaiKhoan.TabIndex = 1;
             this.lblTaiKhoan.Text = "Tài khoản:";
             this.lblTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,7 +71,7 @@
             this.lblMatKhau.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.lblMatKhau.Location = new System.Drawing.Point(72, 139);
             this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Size = new System.Drawing.Size(115, 29);
+            this.lblMatKhau.Size = new System.Drawing.Size(79, 20);
             this.lblMatKhau.TabIndex = 2;
             this.lblMatKhau.Text = "Mật khẩu:";
             this.lblMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -79,19 +79,19 @@
             // txtTaiKhoan
             // 
             this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(203, 82);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(160, 82);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(154, 30);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(154, 23);
             this.txtTaiKhoan.TabIndex = 3;
             this.txtTaiKhoan.Text = "User1";
             // 
             // txtMk
             // 
             this.txtMk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMk.Location = new System.Drawing.Point(203, 138);
+            this.txtMk.Location = new System.Drawing.Point(160, 139);
             this.txtMk.Name = "txtMk";
             this.txtMk.PasswordChar = '*';
-            this.txtMk.Size = new System.Drawing.Size(154, 30);
+            this.txtMk.Size = new System.Drawing.Size(154, 23);
             this.txtMk.TabIndex = 4;
             this.txtMk.Text = "789";
             // 
@@ -150,9 +150,9 @@
             this.xuiCustomPictureBox1.TabIndex = 7;
             this.xuiCustomPictureBox1.Text = "xuiCustomPictureBox1";
             // 
-            // fLogin
+            // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.WindowText;
@@ -162,7 +162,7 @@
             this.Controls.Add(this.xuiCustomPictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ForeColor = System.Drawing.Color.Cornsilk;
-            this.Name = "fLogin";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fLogin";
             this.panel1.ResumeLayout(false);

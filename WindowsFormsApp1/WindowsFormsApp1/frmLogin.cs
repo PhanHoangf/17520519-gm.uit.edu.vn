@@ -13,10 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmLogin : Form
     {
-        private string Tentk;
-
-        public string Tentk1 { get => Tentk; set => Tentk = value; }
-
+        
         public frmLogin()
         {
             InitializeComponent();
@@ -39,15 +36,14 @@ namespace WindowsFormsApp1
             string passWord = txtMk.Text;
             if (Login(userName, passWord))
             {
-                frmDoiMatKhau bangDiem = new frmDoiMatKhau();
-                bangDiem.GetTenTk = userName;
+                frmMain frmMain = new frmMain();
                 this.Hide();
-                bangDiem.ShowDialog();
-
+                frmMain.ShowDialog();
+               
             }
             else
             {
-                MessageBox.Show("sai ten tai khoan hoac mat khau!");
+                MessageBox.Show("Sai tên tài khoản hoặc mật khẩu!");
             }
             txtTaiKhoan.Text = "";
             txtMk.Text = "";
