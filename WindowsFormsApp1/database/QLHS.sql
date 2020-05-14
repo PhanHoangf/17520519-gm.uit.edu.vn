@@ -470,6 +470,11 @@ create PROC USP_DoiMatKhau
   ALTER TABLE BangDiemMon
  ADD CONSTRAINT fk_IDhocsinh_BangDiemMon FOREIGN KEY (iDhocsinh) REFERENCES DSHocSinh (iDhocsinh) ON DELETE CASCADE
 
+ ALTER TABLE TongKetHocKi
+ ADD CONSTRAINT fk_IDLop_TongKetHocKi FOREIGN KEY (iDlop) REFERENCES Lop (iDlop) ON DELETE CASCADE
+
+  ALTER TABLE TongKetHocKi
+ ADD CONSTRAINT fk_IDBangDiemMon_TongKetHocKi FOREIGN KEY (iDbangdiem) REFERENCES BangDiemMon (STT) ON DELETE CASCADE
  go
 
 CREATE PROC USP_TimKiemHsByTen
@@ -481,3 +486,41 @@ BEGIN
 END
 
 EXEC USP_TimKiemHsByTen N'a' 
+
+SELECT l.Tenlop, l.Siso , count(bdm.Ghichu) as N'Số lượng đạt' FROM TongKetHocKi as hk, Lop as l, BangDiemMon as bdm 
+WHERE hk.iDlop = l.iDlop and hk.iDbangdiem=bdm.STT and l.iDlop=1
+
+Insert into TongKetHocKi 
+select l.idlop,bdm.STT
+from Lop as l , BangDiemMon as bdm
+where l.iDlop=bdm.idlop
+
+select l.Tenlop,l.Siso,bdm.Diemtbm,bdm.Ghichu from TongKetHocKi as hk, Lop as l,BangDiemMon as bdm 
+where l.iDlop=hk.iDlop and bdm.STT=hk.iDbangdiem 
+
+select hs.Hoten, AVG(bdm.Diemtbm) as 'TBHKI'
+from BangDiemMon as bdm, DSHocSinh as hs,Lop as l , MonHoc as mh
+where bdm.iDhocsinh=hs.iDhocsinh and bdm.idlop=l.iDlop and l.iDlop=1
+group by hs.Hoten
+
+GO
+
+alter PROC USP_TongKetHocKi @idlop int,@hocki int
+AS
+BEGIN
+	select hs.Hoten as N'Họ tên', cast (AVG(bdm.Diemtbm) as decimal(10,1) ) as 'TBHKI'
+	from BangDiemMon as bdm, DSHocSinh as hs,Lop as l , MonHoc as mh
+	where bdm.iDhocsinh=hs.iDhocsinh and bdm.idlop=l.iDlop and l.iDlop=@idlop and bdm.Hocki=@hocki
+	group by hs.Hoten
+END
+
+EXEC USP_TongKetHocKi 1 , 1
+
+
+select *from BangDiemMon where iDhocsinh=35
+delete from TongKetHocKi
+
+CREATE TABLE PhieuTongket(
+	
+
+)
