@@ -74,7 +74,8 @@ namespace WindowsFormsApp1.DAO
         public bool updateTaiKhoan(string tentk, string matkhau, int quyen)
         {
             string query = "UPDATE TK  SET MatKhau = @MatKhau , Quyen = @Quyen WHERE Tentk = @Tentk ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {  matkhau, quyen , tentk });
+            string hasPass = encoding(matkhau);
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] {  hasPass, quyen , tentk });
             return result > 0;
         }
         public bool deleteTaiKhoan(string tentk)
@@ -86,7 +87,9 @@ namespace WindowsFormsApp1.DAO
         public bool changePassWord(string tentk,string mkhientai,string kiemtramk,string matkhaumoi)
         {
             string query = "USP_DoiMatKhau @tentaikhoan , @matkhauhientai , @checkmatkhauhientai , @matkhaumoi ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tentk, mkhientai, kiemtramk, matkhaumoi });
+            string hasPass = encoding(mkhientai);
+            string newHasPass = encoding(matkhaumoi);
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tentk, hasPass, kiemtramk, newHasPass });
             return result > 0;
         }
     }

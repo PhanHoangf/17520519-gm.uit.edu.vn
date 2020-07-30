@@ -88,7 +88,7 @@ namespace WindowsFormsApp1
 
         public void LoadDanhSachHs()
         {
-            string query = "SELECT dshs.iDhocsinh, dshs.Hoten, l.Tenlop, dshs.Ngaysinh,dshs.Gioitinh,dshs.Diachi,dshs.Email,dshs.TBHKI,dshs.TBHKII FROM DSHocSinh as dshs,Lop as l where dshs.iDlop = l.iDlop ";
+            string query = "SELECT dshs.iDhocsinh, dshs.Hoten, l.Tenlop, dshs.Ngaysinh,dshs.Gioitinh,dshs.Diachi,dshs.Email FROM DSHocSinh as dshs,Lop as l where dshs.iDlop = l.iDlop ";
             StudentList.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
 
@@ -100,8 +100,6 @@ namespace WindowsFormsApp1
             dtpNgaySinh.DataBindings.Add("Value", dtgvDanhSachHocSinh.DataSource, "Ngaysinh");
             txbDiaChi.DataBindings.Add("Text", dtgvDanhSachHocSinh.DataSource, "Diachi");
             txbEmail.DataBindings.Add("Text", dtgvDanhSachHocSinh.DataSource, "Email");
-            txbTBHKI.DataBindings.Add("Text", dtgvDanhSachHocSinh.DataSource, "TBHKI");
-            txbTBHKII.DataBindings.Add("Text", dtgvDanhSachHocSinh.DataSource, "TBHKII");
             cbTenLop.DataBindings.Add("Text", dtgvDanhSachHocSinh.DataSource, "Tenlop");
         }
 
@@ -140,7 +138,7 @@ namespace WindowsFormsApp1
 
         public void LoadHocSinhFromLop(string tenlop)
         {
-            string query = "SELECT dshs.iDhocsinh, dshs.Hoten, l.Tenlop, dshs.Ngaysinh,dshs.Gioitinh,dshs.Diachi,dshs.Email,dshs.TBHKI,dshs.TBHKII FROM DSHocSinh as dshs,Lop as l where dshs.iDlop = l.iDlop and l.Tenlop = '" + tenlop + "'";
+            string query = "SELECT dshs.iDhocsinh, dshs.Hoten, l.Tenlop, dshs.Ngaysinh,dshs.Gioitinh,dshs.Diachi,dshs.Email FROM DSHocSinh as dshs,Lop as l where dshs.iDlop = l.iDlop and l.Tenlop = '" + tenlop + "'";
             StudentList.DataSource = DataProvider.Instance.ExecuteQuery(query);
         }
         #endregion

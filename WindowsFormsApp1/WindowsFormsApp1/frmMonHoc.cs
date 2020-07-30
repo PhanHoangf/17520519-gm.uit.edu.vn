@@ -11,10 +11,15 @@ using WindowsFormsApp1.DAO;
 
 namespace WindowsFormsApp1
 {
+    
     public partial class frmMonHoc : Form
     {
+        private string account;
         BindingSource SubjectList = new BindingSource();
         bool flag;
+
+        public string Account { get => account; set => account = value; }
+
         public frmMonHoc()
         {
             InitializeComponent();
@@ -22,7 +27,6 @@ namespace WindowsFormsApp1
             loadDanhSachMonHoc();
             Databinding();
             txbIdMon.Enabled = false;
-            txbSearchBox.Enabled = false;
             enable(false);
             flag = false;
         }
@@ -87,11 +91,6 @@ namespace WindowsFormsApp1
             loadDanhSachMonHoc();
             enable(false);
             btnLuu.Enabled = false;
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            txbSearchBox.Enabled = true;
         }
 
         public void clear()

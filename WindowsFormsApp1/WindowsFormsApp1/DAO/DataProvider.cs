@@ -6,7 +6,7 @@ namespace WindowsFormsApp1.DAO
 {
     public class DataProvider
     {
-        private string connectStr = @"Data Source=DESKTOP-A1VAJLI;Initial Catalog = QLHS; Integrated Security = True";
+        private string connectStr = @"Data Source=PHAN-THANH-HOAN;Initial Catalog=QLHS;Integrated Security=True";
 
         private static DataProvider instance;
 

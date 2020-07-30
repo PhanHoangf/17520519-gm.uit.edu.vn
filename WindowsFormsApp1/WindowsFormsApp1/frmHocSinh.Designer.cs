@@ -29,16 +29,11 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLuuThemhs = new XanderUI.XUIButton();
             this.cbTenLop = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
-            this.txbTBHKII = new System.Windows.Forms.TextBox();
-            this.txbTBHKI = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txbEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -93,10 +88,6 @@
             this.groupBox1.Controls.Add(this.btnLuuThemhs);
             this.groupBox1.Controls.Add(this.cbTenLop);
             this.groupBox1.Controls.Add(this.dtpNgaySinh);
-            this.groupBox1.Controls.Add(this.txbTBHKII);
-            this.groupBox1.Controls.Add(this.txbTBHKI);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txbEmail);
             this.groupBox1.Controls.Add(this.label4);
@@ -112,9 +103,9 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.groupBox1.Location = new System.Drawing.Point(149, 101);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Size = new System.Drawing.Size(697, 164);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -134,10 +125,10 @@
             this.btnLuuThemhs.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLuuThemhs.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnLuuThemhs.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnLuuThemhs.Location = new System.Drawing.Point(553, 65);
-            this.btnLuuThemhs.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLuuThemhs.Location = new System.Drawing.Point(265, 123);
+            this.btnLuuThemhs.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLuuThemhs.Name = "btnLuuThemhs";
-            this.btnLuuThemhs.Size = new System.Drawing.Size(95, 32);
+            this.btnLuuThemhs.Size = new System.Drawing.Size(199, 32);
             this.btnLuuThemhs.TabIndex = 21;
             this.btnLuuThemhs.TextColor = System.Drawing.Color.Lime;
             this.btnLuuThemhs.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -149,7 +140,7 @@
             this.cbTenLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbTenLop.FormattingEnabled = true;
             this.cbTenLop.Location = new System.Drawing.Point(324, 27);
-            this.cbTenLop.Margin = new System.Windows.Forms.Padding(2);
+            this.cbTenLop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbTenLop.Name = "cbTenLop";
             this.cbTenLop.Size = new System.Drawing.Size(141, 24);
             this.cbTenLop.TabIndex = 19;
@@ -159,50 +150,10 @@
             this.dtpNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(87, 94);
-            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(141, 23);
             this.dtpNgaySinh.TabIndex = 17;
-            // 
-            // txbTBHKII
-            // 
-            this.txbTBHKII.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbTBHKII.Location = new System.Drawing.Point(553, 26);
-            this.txbTBHKII.Margin = new System.Windows.Forms.Padding(2);
-            this.txbTBHKII.Name = "txbTBHKII";
-            this.txbTBHKII.Size = new System.Drawing.Size(141, 23);
-            this.txbTBHKII.TabIndex = 15;
-            // 
-            // txbTBHKI
-            // 
-            this.txbTBHKI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbTBHKI.Location = new System.Drawing.Point(324, 129);
-            this.txbTBHKI.Margin = new System.Windows.Forms.Padding(2);
-            this.txbTBHKI.Name = "txbTBHKI";
-            this.txbTBHKI.Size = new System.Drawing.Size(141, 23);
-            this.txbTBHKI.TabIndex = 14;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(499, 31);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 17);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "TBHKII:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.Location = new System.Drawing.Point(261, 133);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(52, 17);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "TBHKI:";
             // 
             // label8
             // 
@@ -219,7 +170,7 @@
             // 
             this.txbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbEmail.Location = new System.Drawing.Point(87, 131);
-            this.txbEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbEmail.Name = "txbEmail";
             this.txbEmail.Size = new System.Drawing.Size(141, 23);
             this.txbEmail.TabIndex = 13;
@@ -244,7 +195,7 @@
             "Nam",
             "Nữ"});
             this.cbGioiTinh.Location = new System.Drawing.Point(324, 61);
-            this.cbGioiTinh.Margin = new System.Windows.Forms.Padding(2);
+            this.cbGioiTinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbGioiTinh.Name = "cbGioiTinh";
             this.cbGioiTinh.Size = new System.Drawing.Size(141, 24);
             this.cbGioiTinh.TabIndex = 16;
@@ -253,7 +204,7 @@
             // 
             this.txbDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbDiaChi.Location = new System.Drawing.Point(324, 94);
-            this.txbDiaChi.Margin = new System.Windows.Forms.Padding(2);
+            this.txbDiaChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbDiaChi.Name = "txbDiaChi";
             this.txbDiaChi.Size = new System.Drawing.Size(141, 23);
             this.txbDiaChi.TabIndex = 12;
@@ -317,7 +268,7 @@
             // 
             this.txbID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbID.Location = new System.Drawing.Point(87, 63);
-            this.txbID.Margin = new System.Windows.Forms.Padding(2);
+            this.txbID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(141, 23);
             this.txbID.TabIndex = 10;
@@ -326,7 +277,7 @@
             // 
             this.txbHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txbHoTen.Location = new System.Drawing.Point(87, 27);
-            this.txbHoTen.Margin = new System.Windows.Forms.Padding(2);
+            this.txbHoTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txbHoTen.Name = "txbHoTen";
             this.txbHoTen.Size = new System.Drawing.Size(141, 23);
             this.txbHoTen.TabIndex = 11;
@@ -340,9 +291,9 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.groupBox2.Location = new System.Drawing.Point(149, 47);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Size = new System.Drawing.Size(697, 51);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
@@ -353,7 +304,7 @@
             this.cbDanhSachLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbDanhSachLop.FormattingEnabled = true;
             this.cbDanhSachLop.Location = new System.Drawing.Point(44, 22);
-            this.cbDanhSachLop.Margin = new System.Windows.Forms.Padding(2);
+            this.cbDanhSachLop.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbDanhSachLop.Name = "cbDanhSachLop";
             this.cbDanhSachLop.Size = new System.Drawing.Size(103, 24);
             this.cbDanhSachLop.TabIndex = 19;
@@ -378,9 +329,9 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.groupBox3.Location = new System.Drawing.Point(8, 269);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox3.Size = new System.Drawing.Size(838, 176);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
@@ -388,20 +339,19 @@
             // 
             // dtgvDanhSachHocSinh
             // 
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dtgvDanhSachHocSinh.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgvDanhSachHocSinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvDanhSachHocSinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvDanhSachHocSinh.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvDanhSachHocSinh.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvDanhSachHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDanhSachHocSinh.Location = new System.Drawing.Point(2, 21);
-            this.dtgvDanhSachHocSinh.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgvDanhSachHocSinh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgvDanhSachHocSinh.Name = "dtgvDanhSachHocSinh";
             this.dtgvDanhSachHocSinh.RowHeadersWidth = 62;
             this.dtgvDanhSachHocSinh.RowTemplate.Height = 28;
@@ -417,9 +367,9 @@
             this.panel1.Controls.Add(this.btnSua);
             this.panel1.Controls.Add(this.btnThem);
             this.panel1.Location = new System.Drawing.Point(10, 47);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(10);
+            this.panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
             this.panel1.Size = new System.Drawing.Size(133, 218);
             this.panel1.TabIndex = 10;
             // 
@@ -438,7 +388,7 @@
             this.btnLuu.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnLuu.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
             this.btnLuu.Location = new System.Drawing.Point(12, 121);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(109, 32);
             this.btnLuu.TabIndex = 3;
@@ -461,7 +411,7 @@
             this.btnXoa.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnXoa.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
             this.btnXoa.Location = new System.Drawing.Point(12, 85);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(109, 32);
             this.btnXoa.TabIndex = 2;
@@ -484,7 +434,7 @@
             this.btnHuy.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnHuy.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
             this.btnHuy.Location = new System.Drawing.Point(12, 177);
-            this.btnHuy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(109, 32);
             this.btnHuy.TabIndex = 5;
@@ -507,7 +457,7 @@
             this.btnSua.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnSua.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
             this.btnSua.Location = new System.Drawing.Point(12, 48);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(109, 32);
             this.btnSua.TabIndex = 1;
@@ -530,7 +480,7 @@
             this.btnThem.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnThem.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
             this.btnThem.Location = new System.Drawing.Point(12, 12);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(109, 32);
             this.btnThem.TabIndex = 0;
@@ -543,7 +493,7 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(854, 43);
             this.panel2.TabIndex = 11;
@@ -559,7 +509,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmHocSinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmQLHS";
@@ -584,19 +534,14 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.ComboBox cbGioiTinh;
-        private System.Windows.Forms.TextBox txbTBHKII;
-        private System.Windows.Forms.TextBox txbTBHKI;
         private System.Windows.Forms.TextBox txbEmail;
         private System.Windows.Forms.TextBox txbDiaChi;
         private System.Windows.Forms.TextBox txbHoTen;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dtgvDanhSachHocSinh;
         private System.Windows.Forms.ComboBox cbDanhSachLop;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbTenLop;
@@ -611,5 +556,6 @@
         private XanderUI.XUIButton btnSua;
         private XanderUI.XUIButton btnLuuThemhs;
         private XanderUI.XUIButton btnHuy;
+        private System.Windows.Forms.DataGridView dtgvDanhSachHocSinh;
     }
 }

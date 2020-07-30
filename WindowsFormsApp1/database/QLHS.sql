@@ -281,14 +281,14 @@ UPDATE BangDiemMon SET idmonhoc = 1 , Diem15p = 5 , Diem1t = 7 , HK = 6 ,Hocki =
 
 go
 
-create proc USP_Insert
-@idhocsinh int,@idmonhoc int, @idlop int , @diem15p float, @diem1t float,@hk float,@hocki int,@diemdat int
+alter proc USP_Insert
+@idhocsinh int,@idmonhoc int, @idlop int , @diem15p float, @diem1t float,@hk float,@hocki int,@diemdat int,@slm int
 as
 begin
 	INSERT INTO BangDiemMon (iDhocsinh,idmonhoc,idlop,Diem15p,Diem1t,HK,Hocki) 
 	values (@idhocsinh,@idmonhoc,@idlop,@diem15p,@diem1t,@hk,@hocki)
 	update BangDiemMon 
-	set Diemtbm = (@diem15p+@diem1t*2+@hk*3)/6
+	set Diemtbm = (@diem15p+@diem1t*2+@hk*3)/@slm
 	where iDhocsinh=@idhocsinh
 
 	update BangDiemMon set Ghichu= N'Đạt' where Diemtbm > @diemdat
@@ -302,13 +302,13 @@ go
 
 
 alter proc USP_Update
-@idhocsinh int, @idmonhoc int, @diem15p float,@diem1t float,@hk float,@hocki int,@diemdat int
+@idhocsinh int, @idmonhoc int, @diem15p float,@diem1t float,@hk float,@hocki int,@diemdat int,@slm int
 as
 begin
 	update BangDiemMon set Diem15p=@diem15p,Diem1t=@diem1t,HK=@hk,Hocki=@hocki
 	where iDhocsinh=@idhocsinh and idmonhoc=@idmonhoc
 
-	update BangDiemMon  set Diemtbm = (Diem15p + Diem1t * 2 + HK * 3) / 6
+	update BangDiemMon  set Diemtbm = (Diem15p + Diem1t * 2 + HK * 3) / @slm
 	update BangDiemMon set Ghichu= N'Đạt' where Diemtbm > @diemdat and iDhocsinh=@idhocsinh
 	update BangDiemMon set Ghichu= N'Rớt' where Diemtbm < @diemdat and iDhocsinh=@idhocsinh
 end
@@ -352,7 +352,7 @@ Set @soluongdat = (select count(Diemtbm)
 
 
 update BangDiemMon set Ghichu= N'Đạt' 
-where Diemtbm > 5
+where Diemtbm >= 5
 select *from BangDiemMon
 
 
@@ -452,8 +452,8 @@ begin
  select *from TK
  go
 
-create PROC USP_DoiMatKhau
- @tentaikhoan nvarchar(30), @matkhauhientai nvarchar(30) , @checkmatkhauhientai nvarchar(30) ,@matkhaumoi nvarchar(30) 
+alter PROC USP_DoiMatKhau
+ @tentaikhoan nvarchar(30), @matkhauhientai varchar(8000) , @checkmatkhauhientai varchar(8000) ,@matkhaumoi varchar(8000) 
  AS
  BEGIN
 	 IF( @matkhauhientai = @checkmatkhauhientai )
@@ -461,7 +461,7 @@ create PROC USP_DoiMatKhau
 	 ELSE
 	 PRINT N'Wrong Password!'
  END
-
+ select *from TK
  EXEC USP_DoiMatKhau User1,'abcd','abcd','123'
 
  ALTER TABLE TongKetMon
@@ -519,8 +519,3 @@ EXEC USP_TongKetHocKi 1 , 1
 
 select *from BangDiemMon where iDhocsinh=35
 delete from TongKetHocKi
-
-CREATE TABLE PhieuTongket(
-	
-
-)

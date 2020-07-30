@@ -193,7 +193,7 @@
             this.xuiCustomGroupbox1.Size = new System.Drawing.Size(1124, 452);
             this.xuiCustomGroupbox1.TabIndex = 7;
             this.xuiCustomGroupbox1.TabStop = false;
-            this.xuiCustomGroupbox1.Text = "xuiCustomGroupbox1";
+            this.xuiCustomGroupbox1.Text = "Danh sách";
             this.xuiCustomGroupbox1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             // 
             // dtgvTongKetHocKi

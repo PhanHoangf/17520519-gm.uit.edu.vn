@@ -18,6 +18,10 @@ namespace WindowsFormsApp1
     public partial class frmBangDiem : Form
     {
         BindingSource ListBangDiem = new BindingSource();
+        private int SoLuongMon;
+
+        public int SoLuongMon1 { get => SoLuongMon; set => SoLuongMon = value; }
+
         public frmBangDiem()
         {
             InitializeComponent();
@@ -246,7 +250,8 @@ namespace WindowsFormsApp1
                 float? diemhk = txbDiemhk.Text == "" ? (float?)null : float.Parse(txbDiemhk.Text);
                 int hocki = Convert.ToInt32(cbHocki.Text);
                 int diemdat = GetDiemDat(cbDanhSachMon.Text);
-                if (BangdiemDAO.Instance.insertBangDiem(idhocsinh, idmon, idlop, diem15p, diem1t, diemhk, hocki,diemdat))
+                SoLuongMon1 = BangDiem_BUS.Instance.SoLuongMon();
+                if (BangdiemDAO.Instance.insertBangDiem(idhocsinh, idmon, idlop, diem15p, diem1t, diemhk, hocki,diemdat,6))
                 {
                     MessageBox.Show("Nhập điểm thành công!");
                 }
@@ -305,7 +310,8 @@ namespace WindowsFormsApp1
                 float? diemhk = txbDiemhk.Text == "" ? (float?)null : float.Parse(txbDiemhk.Text);
                 int diemdat = GetDiemDat(cbDanhSachMon.Text);
                 int hocki = Convert.ToInt32(cbHocki.Text);
-                if (BangdiemDAO.Instance.updateBangDiem(idhocsinh,idmon,diem15p,diem1t,diemhk,hocki,diemdat))
+                SoLuongMon1 =  BangDiem_BUS.Instance.SoLuongMon();
+                if (BangdiemDAO.Instance.updateBangDiem(idhocsinh,idmon,diem15p,diem1t,diemhk,hocki,diemdat,6))
                 {
                     MessageBox.Show("Cập nhật điểm thành công!");
                 }

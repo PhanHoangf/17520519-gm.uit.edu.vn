@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.ComponentModel;
+using WindowsFormsApp1.DTO;
+using WindowsFormsApp1.DAO;
 
 namespace WindowsFormsApp1.BUS
 {
@@ -30,6 +32,17 @@ namespace WindowsFormsApp1.BUS
         {
             Regex regex = new Regex(@"^[-+]?[0-9]*\,?[0-9]+$");
             return regex.IsMatch(pText);
+        }
+        public int SoLuongMon()
+        {
+            string query = "SELECT *FROM MonHoc";
+            List<Subjects> subjectList = SubjectDAO.Instance.loadSubjects(query);
+            int count = 0;
+            foreach (Subjects item in subjectList)
+            {
+                count++;
+            }
+            return count;
         }
 
     }

@@ -8,12 +8,14 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.BUS;
 using WindowsFormsApp1.DAO;
 using WindowsFormsApp1.DTO;
 namespace WindowsFormsApp1
 {
     public partial class frmLopHoc : Form
     {
+        private string account;
         public frmLopHoc()
         {
             InitializeComponent();
@@ -23,12 +25,17 @@ namespace WindowsFormsApp1
             dtgvDanhSachLop.DataSource = classList;
             addLopBinding();
             grBoxThemLop.Visible = false;
-           
-            
-
+            if (Account == "admin")
+            {
+                btnThem.Enabled = true;
+            }
+            else btnThem.Enabled = false;
         }
         //Tạo BindingSoure
         BindingSource classList = new BindingSource();
+
+        public string Account { get => account; set => account = value; }
+
         public void loadClasslist()
         {
             string query = "select *from Lop ORDER BY Tenlop ASC";

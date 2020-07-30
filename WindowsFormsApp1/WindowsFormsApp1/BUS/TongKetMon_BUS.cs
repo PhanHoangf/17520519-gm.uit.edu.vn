@@ -26,7 +26,7 @@ namespace WindowsFormsApp1.BUS
                 TongKetMon_BUS.instance = value;
             }
         }
-        private TongKetMon_BUS() { }
+        private TongKetMon_BUS() {}
 
       
 

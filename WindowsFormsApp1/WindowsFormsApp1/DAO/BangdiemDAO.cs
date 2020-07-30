@@ -35,17 +35,17 @@ namespace WindowsFormsApp1.DAO
             return Listbangdiem;
         }
 
-        public bool updateBangDiem(int idhocsinh, int idmon, float? diem15p,float? diem1t,float? diemhk , int hocki,int diemdat)
+        public bool updateBangDiem(int idhocsinh, int idmon, float? diem15p,float? diem1t,float? diemhk , int hocki,int diemdat, int slm)
         {
-            string query = "USP_Update @idhocsinh , @idmonhoc , @diem15p , @diem1t , @hk , @hocki , @diemdat ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh,idmon,diem15p,diem1t,diemhk,hocki,diemdat });
+            string query = "USP_Update @idhocsinh , @idmonhoc , @diem15p , @diem1t , @hk , @hocki , @diemdat , @slm ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh,idmon,diem15p,diem1t,diemhk,hocki,diemdat,slm });
             return result > 0;
         }
 
-        public bool insertBangDiem(int idhocsinh,int idmon, int idlop, float? diem15p, float? diem1t, float? diemhk, int hocki,int diemdat)
+        public bool insertBangDiem(int idhocsinh,int idmon, int idlop, float? diem15p, float? diem1t, float? diemhk, int hocki,int diemdat,int slm)
         {
-            string query = " USP_Insert @idhocsinh , @idmonhoc , @idlop , @diem15p , @diem1t , @hk , @hocki , @diemdat ";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh, idmon, idlop, diem15p, diem1t, diemhk, hocki,diemdat });
+            string query = " USP_Insert @idhocsinh , @idmonhoc , @idlop , @diem15p , @diem1t , @hk , @hocki , @diemdat , @slm ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { idhocsinh, idmon, idlop, diem15p, diem1t, diemhk, hocki,diemdat,slm });
             return result > 0;
         }
 

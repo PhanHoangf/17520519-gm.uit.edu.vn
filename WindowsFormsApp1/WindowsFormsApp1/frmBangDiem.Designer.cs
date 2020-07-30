@@ -84,8 +84,8 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 10);
-            this.panel1.Size = new System.Drawing.Size(1196, 78);
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 9);
+            this.panel1.Size = new System.Drawing.Size(1196, 77);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -95,7 +95,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.label1.Location = new System.Drawing.Point(379, 8);
+            this.label1.Location = new System.Drawing.Point(380, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(465, 40);
             this.label1.TabIndex = 0;
@@ -107,9 +107,9 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.groupBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 78);
+            this.panel2.Location = new System.Drawing.Point(0, 77);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1196, 646);
+            this.panel2.Size = new System.Drawing.Size(1196, 625);
             this.panel2.TabIndex = 2;
             // 
             // groupBox1
@@ -121,9 +121,9 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.groupBox1.Location = new System.Drawing.Point(191, 0);
+            this.groupBox1.Location = new System.Drawing.Point(190, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(15, 9, 15, 9);
             this.groupBox1.Size = new System.Drawing.Size(1002, 386);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -138,7 +138,7 @@
             this.groupBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.groupBox5.Location = new System.Drawing.Point(578, 32);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(394, 176);
+            this.groupBox5.Size = new System.Drawing.Size(394, 175);
             this.groupBox5.TabIndex = 1;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Ghi chú";
@@ -148,7 +148,7 @@
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox1.Location = new System.Drawing.Point(3, 26);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(388, 147);
+            this.richTextBox1.Size = new System.Drawing.Size(388, 146);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -172,7 +172,7 @@
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.groupBox4.Location = new System.Drawing.Point(18, 214);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(15, 9, 15, 9);
             this.groupBox4.Size = new System.Drawing.Size(972, 154);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
@@ -181,7 +181,7 @@
             // txb15
             // 
             this.txb15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txb15.Location = new System.Drawing.Point(499, 39);
+            this.txb15.Location = new System.Drawing.Point(500, 38);
             this.txb15.Name = "txb15";
             this.txb15.Size = new System.Drawing.Size(156, 30);
             this.txb15.TabIndex = 18;
@@ -189,7 +189,7 @@
             // txbDiemtbm
             // 
             this.txbDiemtbm.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txbDiemtbm.Location = new System.Drawing.Point(822, 101);
+            this.txbDiemtbm.Location = new System.Drawing.Point(822, 102);
             this.txbDiemtbm.Name = "txbDiemtbm";
             this.txbDiemtbm.Size = new System.Drawing.Size(104, 30);
             this.txbDiemtbm.TabIndex = 17;
@@ -197,7 +197,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(697, 101);
+            this.label10.Location = new System.Drawing.Point(698, 102);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 25);
             this.label10.TabIndex = 16;
@@ -214,7 +214,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(697, 43);
+            this.label9.Location = new System.Drawing.Point(698, 43);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 25);
             this.label9.TabIndex = 14;
@@ -223,7 +223,7 @@
             // txb1t
             // 
             this.txb1t.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txb1t.Location = new System.Drawing.Point(499, 100);
+            this.txb1t.Location = new System.Drawing.Point(500, 100);
             this.txb1t.Name = "txb1t";
             this.txb1t.Size = new System.Drawing.Size(156, 30);
             this.txb1t.TabIndex = 13;
@@ -231,7 +231,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(384, 101);
+            this.label8.Location = new System.Drawing.Point(384, 102);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(109, 25);
             this.label8.TabIndex = 12;
@@ -257,7 +257,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 101);
+            this.label6.Location = new System.Drawing.Point(20, 102);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(131, 25);
             this.label6.TabIndex = 8;
@@ -274,7 +274,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 44);
+            this.label5.Location = new System.Drawing.Point(20, 45);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(124, 25);
             this.label5.TabIndex = 6;
@@ -295,7 +295,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.groupBox3.Location = new System.Drawing.Point(18, 32);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(537, 176);
+            this.groupBox3.Size = new System.Drawing.Size(537, 175);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lựa chọn";
@@ -316,7 +316,7 @@
             this.btnXem.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
             this.btnXem.Location = new System.Drawing.Point(340, 103);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(154, 50);
+            this.btnXem.Size = new System.Drawing.Size(154, 49);
             this.btnXem.TabIndex = 12;
             this.btnXem.TextColor = System.Drawing.Color.Lime;
             this.btnXem.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -326,15 +326,15 @@
             // 
             this.cbDanhSachMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbDanhSachMon.FormattingEnabled = true;
-            this.cbDanhSachMon.Location = new System.Drawing.Point(107, 112);
+            this.cbDanhSachMon.Location = new System.Drawing.Point(106, 112);
             this.cbDanhSachMon.Name = "cbDanhSachMon";
-            this.cbDanhSachMon.Size = new System.Drawing.Size(155, 33);
+            this.cbDanhSachMon.Size = new System.Drawing.Size(156, 33);
             this.cbDanhSachMon.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 115);
+            this.label4.Location = new System.Drawing.Point(8, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 25);
             this.label4.TabIndex = 4;
@@ -375,7 +375,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.label2.Location = new System.Drawing.Point(7, 45);
+            this.label2.Location = new System.Drawing.Point(8, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 25);
             this.label2.TabIndex = 0;
@@ -393,8 +393,8 @@
             this.panel4.Controls.Add(this.btnSua);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(20);
-            this.panel4.Size = new System.Drawing.Size(191, 386);
+            this.panel4.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.panel4.Size = new System.Drawing.Size(190, 386);
             this.panel4.TabIndex = 1;
             // 
             // btnLuuCapNhat
@@ -411,9 +411,9 @@
             this.btnLuuCapNhat.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLuuCapNhat.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnLuuCapNhat.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnLuuCapNhat.Location = new System.Drawing.Point(23, 79);
+            this.btnLuuCapNhat.Location = new System.Drawing.Point(22, 78);
             this.btnLuuCapNhat.Name = "btnLuuCapNhat";
-            this.btnLuuCapNhat.Size = new System.Drawing.Size(154, 50);
+            this.btnLuuCapNhat.Size = new System.Drawing.Size(154, 49);
             this.btnLuuCapNhat.TabIndex = 12;
             this.btnLuuCapNhat.TextColor = System.Drawing.Color.Lime;
             this.btnLuuCapNhat.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -434,9 +434,9 @@
             this.btnNhapDiem.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnNhapDiem.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnNhapDiem.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnNhapDiem.Location = new System.Drawing.Point(23, 23);
+            this.btnNhapDiem.Location = new System.Drawing.Point(22, 23);
             this.btnNhapDiem.Name = "btnNhapDiem";
-            this.btnNhapDiem.Size = new System.Drawing.Size(154, 50);
+            this.btnNhapDiem.Size = new System.Drawing.Size(154, 49);
             this.btnNhapDiem.TabIndex = 11;
             this.btnNhapDiem.TextColor = System.Drawing.Color.Lime;
             this.btnNhapDiem.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -456,9 +456,9 @@
             this.btnRefesh.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRefesh.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnRefesh.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnRefesh.Location = new System.Drawing.Point(23, 247);
+            this.btnRefesh.Location = new System.Drawing.Point(22, 248);
             this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.Size = new System.Drawing.Size(154, 50);
+            this.btnRefesh.Size = new System.Drawing.Size(154, 49);
             this.btnRefesh.TabIndex = 10;
             this.btnRefesh.TextColor = System.Drawing.Color.Lime;
             this.btnRefesh.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -478,9 +478,9 @@
             this.btnXoa.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnXoa.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnXoa.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnXoa.Location = new System.Drawing.Point(23, 191);
+            this.btnXoa.Location = new System.Drawing.Point(22, 191);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(154, 50);
+            this.btnXoa.Size = new System.Drawing.Size(154, 49);
             this.btnXoa.TabIndex = 9;
             this.btnXoa.TextColor = System.Drawing.Color.Lime;
             this.btnXoa.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -500,9 +500,9 @@
             this.btnInBaoCao.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnInBaoCao.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnInBaoCao.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnInBaoCao.Location = new System.Drawing.Point(23, 318);
+            this.btnInBaoCao.Location = new System.Drawing.Point(22, 318);
             this.btnInBaoCao.Name = "btnInBaoCao";
-            this.btnInBaoCao.Size = new System.Drawing.Size(154, 50);
+            this.btnInBaoCao.Size = new System.Drawing.Size(154, 49);
             this.btnInBaoCao.TabIndex = 8;
             this.btnInBaoCao.TextColor = System.Drawing.Color.Lime;
             this.btnInBaoCao.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -522,9 +522,9 @@
             this.btnLuu.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnLuu.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnLuu.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnLuu.Location = new System.Drawing.Point(23, 135);
+            this.btnLuu.Location = new System.Drawing.Point(22, 135);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(154, 50);
+            this.btnLuu.Size = new System.Drawing.Size(154, 49);
             this.btnLuu.TabIndex = 7;
             this.btnLuu.TextColor = System.Drawing.Color.Lime;
             this.btnLuu.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -544,9 +544,9 @@
             this.btnSua.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnSua.HoverTextColor = System.Drawing.Color.LavenderBlush;
             this.btnSua.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnSua.Location = new System.Drawing.Point(23, 79);
+            this.btnSua.Location = new System.Drawing.Point(22, 78);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(154, 50);
+            this.btnSua.Size = new System.Drawing.Size(154, 49);
             this.btnSua.TabIndex = 6;
             this.btnSua.TextColor = System.Drawing.Color.Lime;
             this.btnSua.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -562,7 +562,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Gray;
             this.groupBox2.Location = new System.Drawing.Point(0, 392);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1196, 254);
+            this.groupBox2.Size = new System.Drawing.Size(1196, 233);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Bảng điểm";
@@ -579,19 +579,19 @@
             this.dtgvDanhSachDiem.Name = "dtgvDanhSachDiem";
             this.dtgvDanhSachDiem.RowHeadersWidth = 62;
             this.dtgvDanhSachDiem.RowTemplate.Height = 28;
-            this.dtgvDanhSachDiem.Size = new System.Drawing.Size(1190, 220);
+            this.dtgvDanhSachDiem.Size = new System.Drawing.Size(1190, 199);
             this.dtgvDanhSachDiem.TabIndex = 0;
             // 
-            // fBangDiem
+            // frmBangDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.ClientSize = new System.Drawing.Size(1196, 724);
+            this.ClientSize = new System.Drawing.Size(1196, 702);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Name = "fBangDiem";
+            this.Name = "frmBangDiem";
             this.Text = "fBangDiem";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

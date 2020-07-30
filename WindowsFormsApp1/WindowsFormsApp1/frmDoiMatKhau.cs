@@ -67,14 +67,7 @@ namespace WindowsFormsApp1
                 txbMatKhauMoi.Focus();
                 txbXacNhanMk.Text = "";
                 txbMatKhauMoi.Text = "";
-            }
-            //else if (xacnhanmk == "")
-            //{
-            //    MessageBox.Show("Chưa nhập lại mật khẩu kìa :)");
-            //    txbMatKhauMoi.Focus();
-            //    txbXacNhanMk.Text = "";
-            //    txbMatKhauMoi.Text = "";
-            //}    
+            }  
             else
             {
                 if (kiemtra(tentk, mkhientai, xacnhanmkht, mkmoi))

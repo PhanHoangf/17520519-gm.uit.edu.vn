@@ -44,7 +44,8 @@
             this.lbDangNhap.AutoSize = true;
             this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbDangNhap.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lbDangNhap.Location = new System.Drawing.Point(110, 15);
+            this.lbDangNhap.Location = new System.Drawing.Point(69, 23);
+            this.lbDangNhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDangNhap.Name = "lbDangNhap";
             this.lbDangNhap.Size = new System.Drawing.Size(185, 31);
             this.lbDangNhap.TabIndex = 0;
@@ -57,7 +58,8 @@
             this.lblTaiKhoan.AutoSize = true;
             this.lblTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lblTaiKhoan.Location = new System.Drawing.Point(72, 82);
+            this.lblTaiKhoan.Location = new System.Drawing.Point(26, 97);
+            this.lblTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTaiKhoan.Name = "lblTaiKhoan";
             this.lblTaiKhoan.Size = new System.Drawing.Size(82, 20);
             this.lblTaiKhoan.TabIndex = 1;
@@ -69,7 +71,8 @@
             this.lblMatKhau.AutoSize = true;
             this.lblMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblMatKhau.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lblMatKhau.Location = new System.Drawing.Point(72, 139);
+            this.lblMatKhau.Location = new System.Drawing.Point(26, 135);
+            this.lblMatKhau.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMatKhau.Name = "lblMatKhau";
             this.lblMatKhau.Size = new System.Drawing.Size(79, 20);
             this.lblMatKhau.TabIndex = 2;
@@ -79,21 +82,23 @@
             // txtTaiKhoan
             // 
             this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTaiKhoan.Location = new System.Drawing.Point(160, 82);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(113, 94);
+            this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(154, 23);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(164, 23);
             this.txtTaiKhoan.TabIndex = 3;
             this.txtTaiKhoan.Text = "User1";
             // 
             // txtMk
             // 
             this.txtMk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMk.Location = new System.Drawing.Point(160, 139);
+            this.txtMk.Location = new System.Drawing.Point(113, 132);
+            this.txtMk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMk.Name = "txtMk";
             this.txtMk.PasswordChar = '*';
-            this.txtMk.Size = new System.Drawing.Size(154, 23);
+            this.txtMk.Size = new System.Drawing.Size(164, 23);
             this.txtMk.TabIndex = 4;
-            this.txtMk.Text = "789";
+            this.txtMk.Text = "123";
             // 
             // panel1
             // 
@@ -104,10 +109,11 @@
             this.panel1.Controls.Add(this.lbDangNhap);
             this.panel1.Controls.Add(this.lblTaiKhoan);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 237);
+            this.panel1.Location = new System.Drawing.Point(0, 244);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(15);
-            this.panel1.Size = new System.Drawing.Size(399, 291);
+            this.panel1.Padding = new System.Windows.Forms.Padding(22, 23, 22, 23);
+            this.panel1.Size = new System.Drawing.Size(306, 324);
             this.panel1.TabIndex = 9;
             // 
             // btnDangNhap
@@ -124,9 +130,10 @@
             this.btnDangNhap.HoverBackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.btnDangNhap.HoverTextColor = System.Drawing.Color.DodgerBlue;
             this.btnDangNhap.ImagePosition = XanderUI.XUIButton.imgPosition.Left;
-            this.btnDangNhap.Location = new System.Drawing.Point(97, 208);
+            this.btnDangNhap.Location = new System.Drawing.Point(30, 190);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(198, 65);
+            this.btnDangNhap.Size = new System.Drawing.Size(247, 34);
             this.btnDangNhap.TabIndex = 8;
             this.btnDangNhap.TextColor = System.Drawing.Color.Cornsilk;
             this.btnDangNhap.Vertical_Alignment = System.Drawing.StringAlignment.Center;
@@ -145,8 +152,9 @@
             this.xuiCustomPictureBox1.IsElipse = false;
             this.xuiCustomPictureBox1.IsParallax = false;
             this.xuiCustomPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.xuiCustomPictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.xuiCustomPictureBox1.Name = "xuiCustomPictureBox1";
-            this.xuiCustomPictureBox1.Size = new System.Drawing.Size(399, 231);
+            this.xuiCustomPictureBox1.Size = new System.Drawing.Size(306, 234);
             this.xuiCustomPictureBox1.TabIndex = 7;
             this.xuiCustomPictureBox1.Text = "xuiCustomPictureBox1";
             // 
@@ -156,12 +164,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.WindowText;
-            this.ClientSize = new System.Drawing.Size(399, 528);
+            this.ClientSize = new System.Drawing.Size(306, 568);
             this.ControlBox = false;
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.xuiCustomPictureBox1);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ForeColor = System.Drawing.Color.Cornsilk;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fLogin";
